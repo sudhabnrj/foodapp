@@ -12,13 +12,13 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/sudhabanerjeecc/react.git"
+    "url": "git+https://sudhabnrj.github.io/foodapp"
   },
   "keywords": [],
   "author": "Sudha Chandan Banerjee",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/sudhabanerjeecc/react/issues"
+    "url": "https://sudhabnrj.github.io/foodapp"
   },
   "devDependencies": {
     "parcel": "^2.12.0",
