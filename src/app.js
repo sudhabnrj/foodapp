@@ -10,6 +10,7 @@ import RestaurantsMenu from './components/RestaurantsMenu';
 import { createBrowserRouter, RouterProvider, Outlet } from 'react-router-dom';
 
 const AppLayout = () => {
+
     return(
         <div className="app">
             <Header/>

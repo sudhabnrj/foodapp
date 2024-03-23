@@ -1,11 +1,11 @@
 {
   "name": "namaste-react",
   "version": "1.0.0",
-  "homepage": "https://sudhabnrj.github.io/swigy-app",
+  "homepage": "https://sudhabnrj.github.io/foodapp",
   "description": "This is Swigy Food website clone by using swigy API developed and designed by Sudha Chandan Banerjee",
   "scripts": {
     "predeploy": "npm run build",
-    "deploy": "gh-pages -d build",
+    "deploy": "gh-pages -d dist",
     "start": "parcel index.html",
     "build": "parcel build index.html",
     "test": "jest"
