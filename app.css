@@ -1,0 +1,226 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+img{
+    max-width: 100%;
+}
+ul, li{
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+.poppins-regular, body{
+    font-family: "Poppins", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+.poppins-medium {
+    font-family: "Poppins", sans-serif;
+    font-weight: 500;
+    font-style: normal;
+}
+
+.poppins-semibold {
+    font-family: "Poppins", sans-serif;
+    font-weight: 600;
+    font-style: normal;
+}
+
+.poppins-bold {
+    font-family: "Poppins", sans-serif;
+    font-weight: 700;
+    font-style: normal;
+}
+
+.poppins-extrabold {
+    font-family: "Poppins", sans-serif;
+    font-weight: 800;
+    font-style: normal;
+} 
+.d-flex{
+    display: flex;
+}
+.justify-content-between{
+    justify-content: space-between;
+}
+.flex-column{
+    flex-direction: column;
+}
+.header{
+    box-shadow: 0 15px 40px -20px rgba(0,0,0,0.2);
+    margin-bottom: 40px;
+}
+.logo-container{
+    width: 200px;
+    display: flex;
+    justify-content: start;
+    align-items: center;
+}
+.logo{
+    width: 150px;
+}
+.nav-items > ul{
+    display: flex;
+    gap: 30px;
+    align-items: center;
+}
+.nav-items > ul > li{
+    font-size: 16px;
+    font-weight: 500;
+    
+}
+.nav-items > ul > li > a{
+    text-decoration: none;
+    color: #333;
+}
+.nav-items > ul > li > a:hover{
+    color: rgb(241, 87, 0);
+}
+.h2-title{
+    font-size: 32px;
+    font-weight: 700;
+    margin-block: 40px 30px;
+}
+.res-container,
+.shimmer-container{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 40px 24px;
+}
+.res-card,
+.shimmer-card{
+    text-decoration: none;
+    color: inherit;
+    outline: 0px;
+    cursor: pointer;
+    display: block;
+    width: 19.5rem;
+    height: auto;
+    filter: drop-shadow(rgba(0, 0, 0, 0.1) 0px 2px 8px);
+    background-color: #fdfdec;
+    transition: all 0.3s ease-in-out;
+    -webkit-transition: all 0.3s ease-in-out;
+}
+.shimmer-card{
+    height: 415px;
+    background-color: #f0f0f0;
+}
+.res-card:hover{
+    transform: scale(0.95, 0.95);
+    transform-origin: center center;
+}
+.res-content{
+    padding: 15px;
+}
+.res-container a{
+    text-decoration: none;
+    color: inherit;
+}
+.res-card h3{
+    font-size: 20px;
+    font-weight: 500;
+    line-height: 30px;
+    margin-bottom: 15px;
+}
+.sw-restaurant-card-descriptions-container{
+    gap: 10px;
+    margin-top: 15px;
+}
+.cuisine{
+    font-size: 13px;
+    width: 100%;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+}
+.res-card img{
+    aspect-ratio: 3/2;
+    -webkit-aspect-ratio: 3/2;
+    object-fit: cover;
+    -webkit-object-fit: cover;
+    border-radius: 4px;
+}
+.body-container{
+    margin-bottom: 80px;
+}
+footer{
+    background-color: #333;
+    color: #fff;
+    padding: 40px 0;
+}
+.filter-btn,
+.search-btn{
+    padding: 10px 20px;
+    background-color: #333;
+    color: #fff;
+    font-size: 14px;
+    line-height: 24px;
+    border: none;
+    cursor: pointer;
+    margin-left: 10px;
+    font-weight: 500;
+    border-radius: 6px;
+
+}
+.input-search{
+    border: 1px solid #b0b0b0;
+    box-shadow: none;
+    border-radius: 4px;
+    outline: none;
+    padding: 10px 15px;
+    font-size: 16px;
+    border-radius: 4px;
+    box-shadow: none;
+    outline: none;
+    height: 44px;
+}
+.account-btn{
+    background-color: #333;
+    color: #fff;
+    border-radius: 6px;
+    padding: 12px 20px;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: 500;
+    
+}
+.delevery-time{
+    position: relative;
+    padding-left: 20px;
+}
+.delevery-time::before{
+    content: "";
+    background-color: #333;
+    border-radius: 50%;
+    width: 8px;
+    height: 8px;
+    position: absolute;
+    top: 50%;
+    left: 4px;
+    transform: translateY(-50%);
+    -webkit-transform: translateY(-50%);
+}
+.res-card-thumb{
+    position: relative;
+}
+.card-price{
+    background: linear-gradient(rgba(27,30,36,0)0%, rgb(27,30,36) 80.20%);
+    position: absolute;
+    bottom: 0;
+    z-index: 1;
+    color: #fff;
+    left: 0;
+    right: 0;
+    padding: 15px 15px;
+    font-weight: 600;
+    text-transform: uppercase;
+}
+.container{
+    max-width: 1320px;
+    width: 100%;
+    margin: 0 auto;
+}
