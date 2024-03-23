@@ -12,7 +12,7 @@ import { createBrowserRouter, RouterProvider, Outlet } from 'react-router-dom';
 const AppLayout = () => {
 
     return(
-        <div className="app">
+        <div>
             <Header/>
             <Outlet/>
             <Footer/>
