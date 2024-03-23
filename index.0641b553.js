@@ -2974,7 +2974,6 @@ var _restaurantsMenuDefault = parcelHelpers.interopDefault(_restaurantsMenu);
 var _reactRouterDom = require("react-router-dom");
 const AppLayout = ()=>{
     return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-        className: "app",
         children: [
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _headerJsDefault.default), {}, void 0, false, {
                 fileName: "src/app.js",
