@@ -27417,7 +27417,7 @@ const CDN_URL = "https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_
 const SINGLE_IMAGE = "https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_208,h_208,c_fit/";
 const VEG = "/src/images/veg.png";
 const NON_VEG = "/src/images/non-veg.png";
-const REST_CARD_API = "https://www.swiggy.com/dapi/restaurants/list/v5?lat=12.9715987&lng=77.5945627&is-seo-homepage-enabled=true&page_type";
+const REST_CARD_API = "https://www.swiggy.com/dapi/restaurants/list/v5?lat=18.5204303&lng=73.8567437&page_type=DESKTOP_WEB_LISTING";
 const MENU_API = "https://www.swiggy.com/dapi/menu/pl?page-type=REGULAR_MENU&complete-menu=true&lat=22.57667528302465&lng=88.43104854241207&restaurantId=";
 
 },{"@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"gkKU3":[function(require,module,exports) {
