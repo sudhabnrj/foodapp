@@ -34149,11 +34149,15 @@ const BodyContainer = ()=>{
         fetchData();
     }, []);
     const fetchData = async ()=>{
-        const data = await fetch("/.netlify/functions/getData");
-        const json = await data.json();
-        //console.log(json);
-        setResturantList(json?.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle?.restaurants);
-        setFilteredResturant(json?.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle?.restaurants);
+        try {
+            const response = await fetch("/.netlify/functions/getData");
+            const data = await response.json();
+            const restaurants = data?.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle?.restaurants;
+            setResturantList(restaurants);
+            setFilteredResturant(restaurants);
+        } catch (error) {
+            console.error("Error fetching data:", error);
+        }
     };
     const handleFilter = ()=>{
         const featureList = resturantList.filter((res)=>res.info.avgRating > 4.2);
@@ -34183,7 +34187,7 @@ const BodyContainer = ()=>{
     };
     if (resturantList.length === 0) return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _shimmerJsDefault.default), {}, void 0, false, {
         fileName: "src/components/BodyContainer.js",
-        lineNumber: 68,
+        lineNumber: 70,
         columnNumber: 13
     }, undefined);
     return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
@@ -34210,7 +34214,7 @@ const BodyContainer = ()=>{
                                         placeholder: "Search Restaurants..."
                                     }, void 0, false, {
                                         fileName: "src/components/BodyContainer.js",
-                                        lineNumber: 78,
+                                        lineNumber: 80,
                                         columnNumber: 29
                                     }, undefined),
                                     searchText ? /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("button", {
@@ -34227,17 +34231,17 @@ const BodyContainer = ()=>{
                                                 d: "M2.146 2.854a.5.5 0 1 1 .708-.708L8 7.293l5.146-5.147a.5.5 0 0 1 .708.708L8.707 8l5.147 5.146a.5.5 0 0 1-.708.708L8 8.707l-5.146 5.147a.5.5 0 0 1-.708-.708L7.293 8z"
                                             }, void 0, false, {
                                                 fileName: "src/components/BodyContainer.js",
-                                                lineNumber: 82,
+                                                lineNumber: 84,
                                                 columnNumber: 41
                                             }, undefined)
                                         }, void 0, false, {
                                             fileName: "src/components/BodyContainer.js",
-                                            lineNumber: 81,
+                                            lineNumber: 83,
                                             columnNumber: 37
                                         }, undefined)
                                     }, void 0, false, {
                                         fileName: "src/components/BodyContainer.js",
-                                        lineNumber: 80,
+                                        lineNumber: 82,
                                         columnNumber: 33
                                     }, undefined) : /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("button", {
                                         className: "search-btn btn-icon",
@@ -34252,28 +34256,28 @@ const BodyContainer = ()=>{
                                                 d: "M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001q.044.06.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1 1 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0"
                                             }, void 0, false, {
                                                 fileName: "src/components/BodyContainer.js",
-                                                lineNumber: 87,
+                                                lineNumber: 89,
                                                 columnNumber: 165
                                             }, undefined)
                                         }, void 0, false, {
                                             fileName: "src/components/BodyContainer.js",
-                                            lineNumber: 87,
+                                            lineNumber: 89,
                                             columnNumber: 37
                                         }, undefined)
                                     }, void 0, false, {
                                         fileName: "src/components/BodyContainer.js",
-                                        lineNumber: 86,
+                                        lineNumber: 88,
                                         columnNumber: 33
                                     }, undefined)
                                 ]
                             }, void 0, true, {
                                 fileName: "src/components/BodyContainer.js",
-                                lineNumber: 77,
+                                lineNumber: 79,
                                 columnNumber: 25
                             }, undefined)
                         }, void 0, false, {
                             fileName: "src/components/BodyContainer.js",
-                            lineNumber: 76,
+                            lineNumber: 78,
                             columnNumber: 21
                         }, undefined),
                         /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
@@ -34287,19 +34291,19 @@ const BodyContainer = ()=>{
                                     children: "Top Resturants"
                                 }, void 0, false, {
                                     fileName: "src/components/BodyContainer.js",
-                                    lineNumber: 93,
+                                    lineNumber: 95,
                                     columnNumber: 25
                                 }, undefined)
                             ]
                         }, void 0, true, {
                             fileName: "src/components/BodyContainer.js",
-                            lineNumber: 92,
+                            lineNumber: 94,
                             columnNumber: 21
                         }, undefined)
                     ]
                 }, void 0, true, {
                     fileName: "src/components/BodyContainer.js",
-                    lineNumber: 75,
+                    lineNumber: 77,
                     columnNumber: 17
                 }, undefined),
                 /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
@@ -34310,7 +34314,7 @@ const BodyContainer = ()=>{
                             children: "Top restaurant chains in Kolkata"
                         }, void 0, false, {
                             fileName: "src/components/BodyContainer.js",
-                            lineNumber: 99,
+                            lineNumber: 101,
                             columnNumber: 21
                         }, undefined),
                         /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
@@ -34321,34 +34325,34 @@ const BodyContainer = ()=>{
                                         resData: resturants
                                     }, void 0, false, {
                                         fileName: "src/components/BodyContainer.js",
-                                        lineNumber: 103,
+                                        lineNumber: 105,
                                         columnNumber: 102
                                     }, undefined)
                                 }, resturants.info.id, false, {
                                     fileName: "src/components/BodyContainer.js",
-                                    lineNumber: 103,
+                                    lineNumber: 105,
                                     columnNumber: 29
                                 }, undefined))
                         }, void 0, false, {
                             fileName: "src/components/BodyContainer.js",
-                            lineNumber: 100,
+                            lineNumber: 102,
                             columnNumber: 21
                         }, undefined)
                     ]
                 }, void 0, true, {
                     fileName: "src/components/BodyContainer.js",
-                    lineNumber: 98,
+                    lineNumber: 100,
                     columnNumber: 17
                 }, undefined)
             ]
         }, void 0, true, {
             fileName: "src/components/BodyContainer.js",
-            lineNumber: 74,
+            lineNumber: 76,
             columnNumber: 13
         }, undefined)
     }, void 0, false, {
         fileName: "src/components/BodyContainer.js",
-        lineNumber: 73,
+        lineNumber: 75,
         columnNumber: 9
     }, undefined);
 };
