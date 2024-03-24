@@ -20,7 +20,7 @@ const BodyContainer = () => {
 
     const fetchData = async () => {
         try {
-            const response = await fetch('/.netlify/functions/getData');
+            const response = await fetch('../../functions/getData');
             const data = await response.json();
             const restaurants = data?.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle?.restaurants;
             setResturantList(restaurants);
