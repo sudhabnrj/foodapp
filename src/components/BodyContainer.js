@@ -19,13 +19,15 @@ const BodyContainer = () => {
     }, []);
 
     const fetchData = async () => {
-        const data = await fetch('/.netlify/functions/getData');
-
-        const json = await data.json();
-
-        //console.log(json);
-        setResturantList(json?.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle?.restaurants);
-        setFilteredResturant(json?.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle?.restaurants);
+        try {
+            const response = await fetch('/.netlify/functions/getData');
+            const data = await response.json();
+            const restaurants = data?.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle?.restaurants;
+            setResturantList(restaurants);
+            setFilteredResturant(restaurants);
+        } catch (error) {
+            console.error('Error fetching data:', error);
+        }
     };
 
     const handleFilter = () => {

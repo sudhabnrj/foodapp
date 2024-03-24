@@ -5,6 +5,8 @@ exports.handler = async (event, context) => {
     const response = await fetch('https://www.swiggy.com/dapi/restaurants/list/v5?lat=18.5204303&lng=73.8567437&page_type=DESKTOP_WEB_LISTING');
     const data = await response.json();
 
+    console.log(data);
+
     return {
       statusCode: 200,
       headers: {
