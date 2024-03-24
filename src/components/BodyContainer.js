@@ -19,7 +19,7 @@ const BodyContainer = () => {
     }, []);
 
     const fetchData = async () => {
-        const data = await fetch(/.netlify/functions/getData);
+        const data = await fetch('/.netlify/functions/getData');
 
         const json = await data.json();
 
