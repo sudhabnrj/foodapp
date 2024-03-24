@@ -29,7 +29,7 @@ const BodyContainer = () => {
     };
 
     const handleFilter = () => {
-        const featureList = filteredResturant.filter((res)=> res.info.avgRating > 4.4);
+        const featureList = filteredResturant.filter((res)=> res.info.avgRating > 4);
         setFilteredResturant(featureList);
         //console.log(featureList);
     };
