@@ -167,4 +167,41 @@ h4.itemNameText {
 .icon-NonVeg {
   background-image: url("non-veg.1c2b589a.png");
 }
+
+@media (width <= 992px) {
+  .details-container {
+    width: calc(90% - 250px);
+  }
+}
+
+@media (width <= 767px) {
+  .dish-item {
+    flex-direction: column;
+    justify-content: start;
+    align-items: start;
+  }
+
+  .details-container {
+    order: 2;
+    width: 100%;
+  }
+
+  .items-image-container {
+    order: 1;
+    justify-content: start;
+    margin-bottom: 15px;
+  }
+
+  .res-header {
+    flex-direction: column;
+  }
+
+  .res-header .title-info {
+    width: 100%;
+  }
+
+  .RestaurantTimeCost_wrapper {
+    margin-top: 20px;
+  }
+}
 /*# sourceMappingURL=index.c41b5a0e.css.map */
