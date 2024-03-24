@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import Shimmer from './Shimmer';
+import Shimmer from '../components/Shimmer.js';
 import './restaurantsMenu.css';
 import { SINGLE_IMAGE, VEG, NON_VEG, MENU_API } from '../utils/constents.js';
 import { useParams } from 'react-router-dom';

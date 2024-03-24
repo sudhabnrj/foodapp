@@ -1,7 +1,7 @@
 import ResturantCard from './ResturantCard.js';
-//import { REST_CARD_API } from '../utils/constents.js';
+import { REST_CARD_API } from '../utils/constents.js';
 import { useState, useEffect } from 'react';
-import Shimmer from './Shimmer.js';
+import Shimmer from '../components/Shimmer.js';
 import { Link } from 'react-router-dom';
 // import Search from './Search.js';
 
@@ -19,15 +19,13 @@ const BodyContainer = () => {
     }, []);
 
     const fetchData = async () => {
-        try {
-            const response = await fetch('../../functions/getData');
-            const data = await response.json();
-            const restaurants = data?.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle?.restaurants;
-            setResturantList(restaurants);
-            setFilteredResturant(restaurants);
-        } catch (error) {
-            console.error('Error fetching data:', error);
-        }
+        const data = await fetch(REST_CARD_API);
+
+        const json = await data.json();
+
+        //console.log(json);
+        setResturantList(json?.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle?.restaurants);
+        setFilteredResturant(json?.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle?.restaurants);
     };
 
     const handleFilter = () => {
