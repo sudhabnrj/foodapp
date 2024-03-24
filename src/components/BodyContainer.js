@@ -1,5 +1,5 @@
 import ResturantCard from './ResturantCard.js';
-import { REST_CARD_API } from '../utils/constents.js';
+//import { REST_CARD_API } from '../utils/constents.js';
 import { useState, useEffect } from 'react';
 import Shimmer from './Shimmer.js';
 import { Link } from 'react-router-dom';
@@ -19,7 +19,7 @@ const BodyContainer = () => {
     }, []);
 
     const fetchData = async () => {
-        const data = await fetch(REST_CARD_API);
+        const data = await fetch(/.netlify/functions/getData);
 
         const json = await data.json();
 
@@ -56,18 +56,18 @@ const BodyContainer = () => {
             console.log(filteredResult);
             setFilteredResturant(filteredResult);
         }
-    }
+    };
 
     const clearSearch = () => {
         setSearchText('');
         setFilteredResturant(resturantList);
-    }
+    };
 
     if(resturantList.length === 0){
         return(
             <Shimmer/>
-        )
-    }
+        );
+    };
 
     return(
         <div className="body-container">

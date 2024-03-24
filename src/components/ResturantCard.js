@@ -1,4 +1,4 @@
-import { CDN_URL, SINGLE_IMAGE } from '../utils/constents.js';
+import { CDN_URL, SINGLE_IMAGE } from '../utils/constents';
 
 const ResturantCard = (props) =>{ 
 
