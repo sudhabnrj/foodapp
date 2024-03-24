@@ -21,6 +21,7 @@
     "url": "https://sudhabnrj.github.io/foodapp"
   },
   "devDependencies": {
+    "http-proxy-middleware": "^2.0.6",
     "parcel": "^2.12.0",
     "process": "^0.11.10"
   },
