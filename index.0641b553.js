@@ -27417,8 +27417,9 @@ const CDN_URL = "https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_
 const SINGLE_IMAGE = "https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_208,h_208,c_fit/";
 const VEG = "/src/images/veg.png";
 const NON_VEG = "/src/images/non-veg.png";
-const REST_CARD_API = "https://proxy.cors.sh/https://www.swiggy.com/dapi/restaurants/list/v5?lat=18.5204303&lng=73.8567437&page_type=DESKTOP_WEB_LISTING";
-const MENU_API = "https://proxy.cors.sh/https://www.swiggy.com/dapi/menu/pl?page-type=REGULAR_MENU&complete-menu=true&lat=22.57667528302465&lng=88.43104854241207&restaurantId=";
+const REST_CARD_API = "https://www.swiggy.com/dapi/restaurants/list/v5?lat=18.5204303&lng=73.8567437&page_type=DESKTOP_WEB_LISTING";
+const MENU_API = "https://www.swiggy.com/dapi/menu/pl?page-type=REGULAR_MENU&complete-menu=true&lat=22.57667528302465&lng=88.43104854241207&restaurantId="; //this is live api
+ // export const MENU_API= 'https://proxy.cors.sh/https://www.swiggy.com/dapi/menu/pl?page-type=REGULAR_MENU&complete-menu=true&lat=22.57667528302465&lng=88.43104854241207&restaurantId=';
 
 },{"@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"gkKU3":[function(require,module,exports) {
 exports.interopDefault = function(a) {
@@ -34132,7 +34133,7 @@ parcelHelpers.defineInteropFlag(exports);
 var _jsxDevRuntime = require("react/jsx-dev-runtime");
 var _resturantCardJs = require("./ResturantCard.js");
 var _resturantCardJsDefault = parcelHelpers.interopDefault(_resturantCardJs);
-var _constentsJs = require("../utils/constents.js");
+//import { REST_CARD_API } from '../utils/constents.js';
 var _react = require("react");
 var _shimmerJs = require("./Shimmer.js");
 var _shimmerJsDefault = parcelHelpers.interopDefault(_shimmerJs);
@@ -34148,7 +34149,7 @@ const BodyContainer = ()=>{
         fetchData();
     }, []);
     const fetchData = async ()=>{
-        const data = await fetch((0, _constentsJs.REST_CARD_API));
+        const data = await fetch("/.netlify/functions/getData");
         const json = await data.json();
         //console.log(json);
         setResturantList(json?.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle?.restaurants);
@@ -34362,7 +34363,7 @@ $RefreshReg$(_c, "BodyContainer");
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-dev-runtime":"iTorj","./ResturantCard.js":"7LKZL","../utils/constents.js":"620pG","react":"21dqq","./Shimmer.js":"g6ZGj","react-router-dom":"9xmpe","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"7LKZL":[function(require,module,exports) {
+},{"react/jsx-dev-runtime":"iTorj","./ResturantCard.js":"7LKZL","react":"21dqq","./Shimmer.js":"g6ZGj","react-router-dom":"9xmpe","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"7LKZL":[function(require,module,exports) {
 var $parcel$ReactRefreshHelpers$195a = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
 var prevRefreshReg = window.$RefreshReg$;
 var prevRefreshSig = window.$RefreshSig$;
@@ -34372,7 +34373,7 @@ try {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 var _jsxDevRuntime = require("react/jsx-dev-runtime");
-var _constentsJs = require("../utils/constents.js");
+var _constents = require("../utils/constents");
 const ResturantCard = (props)=>{
     const { resData } = props;
     const { cloudinaryImageId, name, avgRating, cuisines, costForTwo, sla } = resData.info;
@@ -34384,7 +34385,7 @@ const ResturantCard = (props)=>{
                 children: [
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("img", {
                         alt: "",
-                        src: (0, _constentsJs.CDN_URL) + cloudinaryImageId
+                        src: (0, _constents.CDN_URL) + cloudinaryImageId
                     }, void 0, false, {
                         fileName: "src/components/ResturantCard.js",
                         lineNumber: 12,
@@ -34470,7 +34471,7 @@ $RefreshReg$(_c, "ResturantCard");
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-dev-runtime":"iTorj","../utils/constents.js":"620pG","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"g6ZGj":[function(require,module,exports) {
+},{"react/jsx-dev-runtime":"iTorj","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru","../utils/constents":"620pG"}],"g6ZGj":[function(require,module,exports) {
 var $parcel$ReactRefreshHelpers$0b04 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
 var prevRefreshReg = window.$RefreshReg$;
 var prevRefreshSig = window.$RefreshSig$;
