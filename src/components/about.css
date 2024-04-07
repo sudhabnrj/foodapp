@@ -1,0 +1,12 @@
+.hr{
+    border-color: #ddd;
+    opacity: 0.2;
+    margin-top: 20px;  
+}
+.user-list-container{
+    flex-wrap: wrap;
+    justify-content: start;
+    margin-block: 40px;
+    display: flex;
+    gap: 40px 0;
+}

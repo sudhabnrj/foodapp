@@ -1,117 +1,99 @@
-import { useEffect, useState } from 'react';
+import StarsIcon from '@mui/icons-material/Stars';
+import DeliveryDiningIcon from '@mui/icons-material/DeliveryDining';
 import Shimmer from '../components/Shimmer.js';
-import './restaurantsMenu.css';
-import { SINGLE_IMAGE, VEG, NON_VEG, MENU_API } from '../utils/constents.js';
+import { SINGLE_IMAGE } from '../utils/constents.js';
 import { useParams } from 'react-router-dom';
+import useRestaurantMenu from '../utils/useRestaurantMenu';
+import vegImg from '../images/veg.png';
+import nonVegImg from '../images/non-veg.png';
+
 
 
 const RestaurantsMenu = () => {
 
-    const [resInfo, setResInfo] = useState(null);
-
     const { resId } = useParams();
 
-    useEffect(()=> {
-        fetchMenu();
-    }, []);
-
-    const fetchMenu = async () => {
-        try{
-            const data = await fetch(MENU_API + resId);
-
-            const json = await data.json();
-
-            console.log(json);
-            setResInfo(json.data);
-        }
-        catch(error){
-            console.log(error);
-        }
-
-    };
+    const resInfo = useRestaurantMenu(resId);
 
     if (resInfo === null) return <Shimmer/>;
 
     const { 
         name, 
-        areaName, 
+        areaName,
+        city,
+        expectationNotifiers,
         sla, 
         avgRatingString, 
         totalRatingsString, 
         labels,
         feeDetails,
         costForTwoMessage
-    } = resInfo?.cards[0]?.card?.card?.info || [];
+    } = resInfo?.cards[2]?.card?.card?.info || {};
 
-    const { itemCards } = resInfo?.cards[2]?.groupedCard?.cardGroupMap?.REGULAR?.cards[1]?.card?.card || [];
+    // Remove HTML tags from expectationNotifiers
+    const sanitizedText = expectationNotifiers && expectationNotifiers[0]?.text.replace(/<\/?[^>]+(>|$)/g, "");
 
-    console.log(resInfo);
+    const { itemCards } = resInfo?.cards[4]?.groupedCard?.cardGroupMap?.REGULAR?.cards[1]?.card?.card && 
+    resInfo?.cards[4]?.groupedCard?.cardGroupMap?.REGULAR?.cards[2]?.card?.card || [];
+
+    
 
     return (
-        <div className="single-restaurants">
-            <div className="container">
-                <div className="res-header">
-                    <div className="title-info">
-                        <h1>{name}</h1>
-                        <p className="res-cuisines">{labels[2].message}</p>
-                        <p className="res-area">{areaName} <span>{sla.lastMileTravelString}</span></p>
-                        <ul>
-                            <li className="restaurantsMessage_wrapper">
-                                {feeDetails && feeDetails.message && feeDetails.message.length === 0 && (
-                                <><img src="https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_18,h_18/v1648635511/Delivery_fee_new_cjxumu" alt="DISTANCE_FEE_NON_FOOD_LM" className="restaurantsMessage_icon" />
-                                <span className="restaurantsMessage_text">{feeDetails.message}</span></>
-                                )}
-                            </li>
-                        </ul>
-                    </div>
-                    <div className="restaurant-ratings-header">
-                        <span className="restaurant_avgRating">
-                            <span className="icon-star"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" className="bi bi-star-fill" viewBox="0 0 16 16"><path d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"/></svg></span> 
-                            <span>{avgRatingString}</span> 
-                        </span>
-                        <p className="restaurant_totalRatings">{totalRatingsString}</p>
-                    </div>
-                </div>
-
-                <ul className="RestaurantTimeCost_wrapper">
-
-                    {sla && sla.slaString && sla.slaString.length === 0 (<li className="RestaurantTimeCost_item">
-                        <svg className="RestaurantTimeCost_icon" width="18" height="18" viewBox="0 0 18 18" xmlns="http://www.w3.org/2000/svg" fill="none">
-                            <circle r="8.35" transform="matrix(-1 0 0 1 9 9)" stroke="#3E4152" strokeWidth="1.3"></circle>
-                            <path d="M3 15.2569C4.58666 16.9484 6.81075 18 9.273 18C14.0928 18 18 13.9706 18 9C18 4.02944 14.0928 0 9.273 0C9.273 2.25 9.273 9 9.273 9C6.36399 12 5.63674 12.75 3 15.2569Z" fill="#3E4152"></path>
-                        </svg>
-                        <span>{sla.slaString}</span>
-                    </li>)}
-                    <li className="RestaurantTimeCost_item">
-                        <svg className="RestaurantTimeCost_icon" width="18" height="18" viewBox="0 0 18 18" xmlns="http://www.w3.org/2000/svg" fill="none">
-                            <circle cx="9" cy="9" r="8.25" stroke="#3E4152" strokeWidth="1.5"></circle>
-                            <path d="M12.8748 4.495H5.6748V6.04H7.9698C8.7948 6.04 9.4248 6.43 9.6198 7.12H5.6748V8.125H9.6048C9.3798 8.8 8.7648 9.22 7.9698 9.22H5.6748V10.765H7.3098L9.5298 14.5H11.5548L9.1098 10.57C10.2048 10.39 11.2698 9.58 11.4498 8.125H12.8748V7.12H11.4348C11.3148 6.475 10.9698 5.905 10.4298 5.5H12.8748V4.495Z" fill="#3E4152"></path>
-                        </svg>
-                        <span>{costForTwoMessage}</span>
-                    </li>
-                </ul>
-
-                <div className="restaurants-menu-list">
-                    <h3>Recommended Menus</h3>
-                    {itemCards.map((menu)=> (
-                        <div className="dish-item" key={menu.card.info.id}>
-                            <div className="details-container">
-                                {menu.card.info.isVeg ? 
-                                    <span className="icon-Veg">Veg</span> : 
-                                    <span className="icon-NonVeg">Non_Veg</span>
-                                }                                
-                                <h4 className="itemNameText">{menu.card.info.name}</h4>
-                                <span className="rupee">₹{menu.card.info.defaultPrice / 100 || menu.card.info.price / 100}</span>
-                                <p className="itemDesc">{menu.card.info.description}</p>
-                                <button className="itemCart btn-cart" type="button">Add to cart</button>
-                            </div>
-                            <div className="items-image-container">
-                                <img alt="Chicken Kebabs Platter- (Serves 2)" className="itemImageThumb" src={SINGLE_IMAGE + menu.card.info.imageId} />
+        <div className="w-full">
+            <div className="w-full md:w-3/4 lg:w-[800px] mx-auto">
+                <div className="container mx-auto px-4 lg:px-0">
+                    <div className="mt-10">
+                        <h1 className="text-3xl font-bold mb-3">{name}</h1>
+                        <div className="bg-gradient-to-b from-transparent to-slate-200 rounded-3xl p-2 sm:p-5">
+                            <div className="bg-white border rounded-xl p-3 sm:p-5">
+                                <div className="flex justify-start items-center">
+                                    <div className="flex justify-start items-center">
+                                        <StarsIcon className="text-green-700 mr-1 !w-4 !h-4" />
+                                        <span className="text-sm sm:text-lg font-medium">{avgRatingString} ({totalRatingsString})</span>
+                                    </div>
+                                    <span className="text-slate-400 mx-2">|</span>
+                                    <div>
+                                        <span className="text-sm sm:text-lg font-medium">{costForTwoMessage}</span>
+                                    </div>
+                                </div>
+                                <p className="text-rose-500 font-medium my-2">{labels[2].message}</p>
+                                <div className="text-sm font-medium gray-divider relative pl-4">
+                                    <span className="absolute h-full bg-stone-500 w-[1px] left-[2px]"></span>
+                                    <div className=" border-l-emerald-50 border-l-[1px]">
+                                        <p><span>Outlet</span><span className="ml-3 text-stone-500">{city} | {areaName}</span></p> 
+                                        <p><span>{sla.minDeliveryTime}-{sla.maxDeliveryTime}</span><span>mins</span></p>
+                                    </div>
+                                </div>
+                                {sanitizedText ? (
+                                <div className="flex justify-start items-center mt-3 pt-1 border-t">
+                                    <span className="text-stone-500 font-medium"><DeliveryDiningIcon className="text-stone-500 mr-1" />
+                                        {sanitizedText}
+                                    </span>
+                                </div>) : null
+                                }
                             </div>
                         </div>
-                    ))}
-                    
-                    
+                    </div>
+
+                    <div className="restaurants-menu-list">
+                        <h3 className="mt-5 mb-6 text-2xl font-bold">Recommended <span className>({itemCards.length})</span></h3>
+                        {itemCards.map((menu)=> (
+                            <div className="flex justify-between items-start mb-9 pb-9 border-b" key={menu?.card?.info?.id}>
+                                <div className="order-2 sm:order-1 w-full pl-6 sm:w-4/5 pr-0 sm:pr-9">
+                                    <img className="w-4" src={menu?.card?.info?.isVeg ? vegImg : nonVegImg} alt={menu?.card?.info?.isVeg ? 'Veg' : 'Non-Veg'} />                                
+                                    <h4 className="font-semibold text-sm sm:text-xl text-stone-600 my-1">{menu?.card?.info?.name}</h4>
+                                    <span className="font-semibold text-md text-rose-500 my-1">₹{menu?.card?.info?.defaultPrice / 100 || menu.card.info.price / 100}</span>
+                                    <p className="text-stone-500 text-xs sm:text-sm mt-2 mb-3">{menu?.card?.info?.description}</p>
+                                    <button className="bg-rose-400 text-white text-sm sm:text-base font-bold px-4 sm:px-2 w-auto sm:w-[140px] md:w-1/4 py-2 rounded-md" type="button">Add to cart</button>
+                                </div>
+                                <div className="order-1 sm:order-2 w-[100px] sm:w-1/5 relative">
+                                    <img alt="{menu.card.info.name}" className="rounded-xl w-[100px] sm:w-auto aspect-square object-cover" src={SINGLE_IMAGE + menu?.card?.info?.imageId} />
+                                    
+                                </div>
+                            </div>
+                        ))}                       
+                        
+                    </div>
                 </div>
             </div>
         </div>

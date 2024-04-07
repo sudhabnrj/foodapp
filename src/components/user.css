@@ -1,0 +1,22 @@
+.user-card{
+    width: 24%;
+    margin-right: 15px;
+    filter: drop-shadow(0 2px 8px #0000001a);
+    background-color: #fdfdec;
+}
+.user-card:nth-child(4n + 4){
+    margin-right: 0;
+}
+.user-thumb{
+    width: 100%;
+    height: 280px;
+}
+.user-thumb > img{
+    aspect-ratio: 2 / 1;
+    object-fit: cover;
+    height: 100%;
+    border-radius: 6px 6px 0 0;
+}
+.user-content{
+    padding: 10px 20px;
+}
