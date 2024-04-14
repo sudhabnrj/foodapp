@@ -25,9 +25,9 @@ const Header = () =>{
 
     return(
         <header className={`dark:bg-slate-800 light:bg-slate-50 shadow-md lg:min-h-24 pb-3 lg:pb-0 ${mobileNavMenu === true ? 'opened' : ''}`}>
-            <div className=' bg-slate-700'>
+            <div className=' bg-rose-400 dark:bg-slate-700'>
                 <div className='container flex justify-center items-center'>
-                    <p className='text-sm text-slate-400'>The restaurants data is coming from @Swigy live API, for testing purpose</p>
+                    <p className='text-sm text-stone-200 dark:text-slate-400'>The restaurants data is coming from @Swigy live API, for testing purpose</p>
                 </div>
             </div>
             <div className="container mx-auto px-4 md:px-0">

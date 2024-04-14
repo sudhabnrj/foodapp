@@ -113,7 +113,7 @@ const BodyContainer = () => {
 
     //Online/Offline Check
     if (isOnline === false){
-        return <h1>Opps, Looks like you are offline!</h1>
+        return <h1 className='text-center mt-5 font-medium'>Opps, Looks like you are <span className='font-bold'>offline!</span></h1>
     }
 
     //Placeholder UI Display
