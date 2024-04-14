@@ -25,10 +25,10 @@ const About = () => {
     };
 
     return(
-        <div className="container mx-auto mt-10">
-            <h1 className="text-2xl text mb-9">Welcome to Shopee Food App</h1>
-            <div className="flex justify-between items-center">
-                <User name={users.name} bio={users.bio} avatar_url={users.avatar_url} company={users.company} location={users.location} email={users.email} public_repos={users.public_repos} html_url={users.html_url} />
+        <div className="container mx-auto px-4 lg:px-0 mt-10">
+            <h1 className="text-2xl text mb-9 text-center sm:text-left">Welcome to Shopee Food App</h1>
+            <div className="flex flex-col sm:flex-row justify-between items-center">
+                <User name={users.name} bio={users.bio} avatar_url={users.avatar_url} company={users.company} location={users.location} email="sudhabnrj@gmail.com" public_repos={users.public_repos} html_url={users.html_url} linkedin_url="https://www.linkedin.com/in/sudhachandan-banerjee" />
             </div>
         </div>
     );
