@@ -27320,358 +27320,382 @@ const Header = ()=>{
     };
     return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("header", {
         className: `dark:bg-slate-800 light:bg-slate-50 shadow-md lg:min-h-24 pb-3 lg:pb-0 ${mobileNavMenu === true ? "opened" : ""}`,
-        children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-            className: "container mx-auto px-4 md:px-0",
-            children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-                className: "flex justify-between items-center flex-row",
-                children: [
-                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-                        className: "logo-container w-4/12 sm:w-2/12",
-                        children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouterDom.Link), {
-                            to: "/",
-                            children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("img", {
-                                className: "w-32 lg:w-40",
-                                src: (0, _constents.LOGO_URL),
-                                alt: "Shopee Food"
-                            }, void 0, false, {
-                                fileName: "src/components/Header.js",
-                                lineNumber: 31,
-                                columnNumber: 38
-                            }, undefined)
-                        }, void 0, false, {
-                            fileName: "src/components/Header.js",
-                            lineNumber: 31,
-                            columnNumber: 25
-                        }, undefined)
+        children: [
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                className: " bg-slate-700",
+                children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                    className: "container flex justify-center items-center",
+                    children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
+                        className: "text-sm text-slate-400",
+                        children: "The restaurants data is coming from @Swigy live API, for testing purpose"
                     }, void 0, false, {
                         fileName: "src/components/Header.js",
                         lineNumber: 30,
                         columnNumber: 21
-                    }, undefined),
-                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-                        className: "flex flex-row w-8/12 sm:w-10/12",
-                        children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-                            className: "w-full flex justify-end items-center",
-                            children: [
-                                mobileNavMenu && /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("ul", {
-                                    className: `flex flex-col lg:flex-row lg:justify-end lg:items-center gap-x-3 md:gap-x-8 lg:text-lg xl:text-xl font-semibold text-stone-200 fixed lg:relative top-0 bg-slate-700 lg:bg-transparent h-full lg:h-auto w-[250px] lg:w-auto p-5 lg:p-0 z-20 lg:z-auto gap-y-3 lg:gap-y-0 transition-all lg:left-0 ${mobileNavMenu === true ? "left-0" : "left-[-250px]"}`,
-                                    children: [
-                                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("li", {
-                                            children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouterDom.Link), {
-                                                to: "/",
-                                                children: "Home"
-                                            }, void 0, false, {
-                                                fileName: "src/components/Header.js",
-                                                lineNumber: 37,
-                                                columnNumber: 41
-                                            }, undefined)
-                                        }, void 0, false, {
-                                            fileName: "src/components/Header.js",
-                                            lineNumber: 37,
-                                            columnNumber: 37
-                                        }, undefined),
-                                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("li", {
-                                            children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouterDom.Link), {
-                                                to: "/about",
-                                                children: "About Us"
-                                            }, void 0, false, {
-                                                fileName: "src/components/Header.js",
-                                                lineNumber: 38,
-                                                columnNumber: 41
-                                            }, undefined)
-                                        }, void 0, false, {
-                                            fileName: "src/components/Header.js",
-                                            lineNumber: 38,
-                                            columnNumber: 37
-                                        }, undefined),
-                                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("li", {
-                                            children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouterDom.Link), {
-                                                to: "/contact",
-                                                children: "Contact Us"
-                                            }, void 0, false, {
-                                                fileName: "src/components/Header.js",
-                                                lineNumber: 39,
-                                                columnNumber: 41
-                                            }, undefined)
-                                        }, void 0, false, {
-                                            fileName: "src/components/Header.js",
-                                            lineNumber: 39,
-                                            columnNumber: 37
-                                        }, undefined),
-                                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("li", {
-                                            children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouterDom.Link), {
-                                                to: "/grocery",
-                                                children: "Grocery"
-                                            }, void 0, false, {
-                                                fileName: "src/components/Header.js",
-                                                lineNumber: 40,
-                                                columnNumber: 41
-                                            }, undefined)
-                                        }, void 0, false, {
-                                            fileName: "src/components/Header.js",
-                                            lineNumber: 40,
-                                            columnNumber: 37
-                                        }, undefined),
-                                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("li", {
-                                            children: "Cart"
-                                        }, void 0, false, {
-                                            fileName: "src/components/Header.js",
-                                            lineNumber: 41,
-                                            columnNumber: 37
-                                        }, undefined),
-                                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("li", {
-                                            children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-                                                className: "",
-                                                children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("button", {
-                                                    type: "button",
-                                                    className: "w-full text-base bg-red-400 text-stone-50 px-5 py-2 flex items-center justify-center rounded-md",
-                                                    onClick: ()=>{
-                                                        accountHandler();
-                                                    },
-                                                    children: accButton
-                                                }, void 0, false, {
-                                                    fileName: "src/components/Header.js",
-                                                    lineNumber: 44,
-                                                    columnNumber: 45
-                                                }, undefined)
-                                            }, void 0, false, {
-                                                fileName: "src/components/Header.js",
-                                                lineNumber: 43,
-                                                columnNumber: 41
-                                            }, undefined)
-                                        }, void 0, false, {
-                                            fileName: "src/components/Header.js",
-                                            lineNumber: 42,
-                                            columnNumber: 37
-                                        }, undefined)
-                                    ]
-                                }, void 0, true, {
+                    }, undefined)
+                }, void 0, false, {
+                    fileName: "src/components/Header.js",
+                    lineNumber: 29,
+                    columnNumber: 17
+                }, undefined)
+            }, void 0, false, {
+                fileName: "src/components/Header.js",
+                lineNumber: 28,
+                columnNumber: 13
+            }, undefined),
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                className: "container mx-auto px-4 md:px-0",
+                children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                    className: "flex justify-between items-center flex-row",
+                    children: [
+                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                            className: "logo-container w-4/12 sm:w-2/12",
+                            children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouterDom.Link), {
+                                to: "/",
+                                children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("img", {
+                                    className: "w-32 lg:w-40",
+                                    src: (0, _constents.LOGO_URL),
+                                    alt: "Shopee Food"
+                                }, void 0, false, {
                                     fileName: "src/components/Header.js",
                                     lineNumber: 36,
-                                    columnNumber: 33
-                                }, undefined),
-                                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("ul", {
-                                    className: "flex flex-col lg:flex-row lg:justify-end lg:items-center gap-x-3 md:gap-x-8 lg:text-lg xl:text-xl font-semibold text-stone-800 dark:text-stone-200 fixed lg:relative left-[-255px] lg:left-0 top-0 bg-slate-700 lg:bg-transparent h-full lg:h-auto w-[250px] lg:w-auto p-5 lg:p-0 z-10 lg:z-auto gap-y-3 lg:gap-y-0",
-                                    children: [
-                                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("li", {
-                                            children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouterDom.Link), {
-                                                to: "/",
-                                                children: "Home"
-                                            }, void 0, false, {
-                                                fileName: "src/components/Header.js",
-                                                lineNumber: 50,
-                                                columnNumber: 37
-                                            }, undefined)
-                                        }, void 0, false, {
-                                            fileName: "src/components/Header.js",
-                                            lineNumber: 50,
-                                            columnNumber: 33
-                                        }, undefined),
-                                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("li", {
-                                            children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouterDom.Link), {
-                                                to: "/about",
-                                                children: "About Us"
-                                            }, void 0, false, {
-                                                fileName: "src/components/Header.js",
-                                                lineNumber: 51,
-                                                columnNumber: 37
-                                            }, undefined)
-                                        }, void 0, false, {
-                                            fileName: "src/components/Header.js",
-                                            lineNumber: 51,
-                                            columnNumber: 33
-                                        }, undefined),
-                                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("li", {
-                                            children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouterDom.Link), {
-                                                to: "/contact",
-                                                children: "Contact Us"
-                                            }, void 0, false, {
-                                                fileName: "src/components/Header.js",
-                                                lineNumber: 52,
-                                                columnNumber: 37
-                                            }, undefined)
-                                        }, void 0, false, {
-                                            fileName: "src/components/Header.js",
-                                            lineNumber: 52,
-                                            columnNumber: 33
-                                        }, undefined),
-                                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("li", {
-                                            children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouterDom.Link), {
-                                                to: "/grocery",
-                                                children: "Grocery"
-                                            }, void 0, false, {
-                                                fileName: "src/components/Header.js",
-                                                lineNumber: 53,
-                                                columnNumber: 37
-                                            }, undefined)
-                                        }, void 0, false, {
-                                            fileName: "src/components/Header.js",
-                                            lineNumber: 53,
-                                            columnNumber: 33
-                                        }, undefined),
-                                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("li", {
-                                            children: "Cart"
-                                        }, void 0, false, {
-                                            fileName: "src/components/Header.js",
-                                            lineNumber: 54,
-                                            columnNumber: 33
-                                        }, undefined),
-                                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("li", {
-                                            children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-                                                className: "mx-5",
-                                                children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("button", {
-                                                    type: "button",
-                                                    className: "text-base bg-red-400 text-stone-50 px-5 py-2 flex items-center justify-center rounded-md",
-                                                    onClick: ()=>{
-                                                        accountHandler();
-                                                    },
-                                                    children: accButton
+                                    columnNumber: 38
+                                }, undefined)
+                            }, void 0, false, {
+                                fileName: "src/components/Header.js",
+                                lineNumber: 36,
+                                columnNumber: 25
+                            }, undefined)
+                        }, void 0, false, {
+                            fileName: "src/components/Header.js",
+                            lineNumber: 35,
+                            columnNumber: 21
+                        }, undefined),
+                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                            className: "flex flex-row w-8/12 sm:w-10/12",
+                            children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                                className: "w-full flex justify-end items-center",
+                                children: [
+                                    mobileNavMenu && /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("ul", {
+                                        className: `flex flex-col lg:flex-row lg:justify-end lg:items-center gap-x-3 md:gap-x-8 lg:text-lg xl:text-xl font-semibold text-stone-200 fixed lg:relative top-0 bg-slate-700 lg:bg-transparent h-full lg:h-auto w-[250px] lg:w-auto p-5 lg:p-0 z-20 lg:z-auto gap-y-3 lg:gap-y-0 transition-all lg:left-0 ${mobileNavMenu === true ? "left-0" : "left-[-250px]"}`,
+                                        children: [
+                                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("li", {
+                                                children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouterDom.Link), {
+                                                    to: "/",
+                                                    children: "Home"
                                                 }, void 0, false, {
                                                     fileName: "src/components/Header.js",
-                                                    lineNumber: 57,
+                                                    lineNumber: 42,
                                                     columnNumber: 41
                                                 }, undefined)
                                             }, void 0, false, {
                                                 fileName: "src/components/Header.js",
-                                                lineNumber: 56,
+                                                lineNumber: 42,
                                                 columnNumber: 37
-                                            }, undefined)
-                                        }, void 0, false, {
-                                            fileName: "src/components/Header.js",
-                                            lineNumber: 55,
-                                            columnNumber: 33
-                                        }, undefined)
-                                    ]
-                                }, void 0, true, {
-                                    fileName: "src/components/Header.js",
-                                    lineNumber: 49,
-                                    columnNumber: 29
-                                }, undefined),
-                                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-                                    className: "flex justify-end lg:justify-end items-center mt-2 lg:mt-0",
-                                    children: [
-                                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-                                            className: "",
-                                            children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("button", {
-                                                onClick: toggleMode,
-                                                children: isDarkMode ? /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _lightModeDefault.default), {}, void 0, false, {
+                                            }, undefined),
+                                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("li", {
+                                                children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouterDom.Link), {
+                                                    to: "/about",
+                                                    children: "About Us"
+                                                }, void 0, false, {
                                                     fileName: "src/components/Header.js",
-                                                    lineNumber: 64,
-                                                    columnNumber: 55
-                                                }, undefined) : /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _darkModeDefault.default), {}, void 0, false, {
-                                                    fileName: "src/components/Header.js",
-                                                    lineNumber: 64,
-                                                    columnNumber: 74
+                                                    lineNumber: 43,
+                                                    columnNumber: 41
                                                 }, undefined)
                                             }, void 0, false, {
                                                 fileName: "src/components/Header.js",
-                                                lineNumber: 63,
+                                                lineNumber: 43,
+                                                columnNumber: 37
+                                            }, undefined),
+                                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("li", {
+                                                children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouterDom.Link), {
+                                                    to: "/contact",
+                                                    children: "Contact Us"
+                                                }, void 0, false, {
+                                                    fileName: "src/components/Header.js",
+                                                    lineNumber: 44,
+                                                    columnNumber: 41
+                                                }, undefined)
+                                            }, void 0, false, {
+                                                fileName: "src/components/Header.js",
+                                                lineNumber: 44,
+                                                columnNumber: 37
+                                            }, undefined),
+                                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("li", {
+                                                children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouterDom.Link), {
+                                                    to: "/grocery",
+                                                    children: "Grocery"
+                                                }, void 0, false, {
+                                                    fileName: "src/components/Header.js",
+                                                    lineNumber: 45,
+                                                    columnNumber: 41
+                                                }, undefined)
+                                            }, void 0, false, {
+                                                fileName: "src/components/Header.js",
+                                                lineNumber: 45,
+                                                columnNumber: 37
+                                            }, undefined),
+                                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("li", {
+                                                children: "Cart"
+                                            }, void 0, false, {
+                                                fileName: "src/components/Header.js",
+                                                lineNumber: 46,
+                                                columnNumber: 37
+                                            }, undefined),
+                                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("li", {
+                                                children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                                                    className: "",
+                                                    children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("button", {
+                                                        type: "button",
+                                                        className: "w-full text-base bg-red-400 text-stone-50 px-5 py-2 flex items-center justify-center rounded-md",
+                                                        onClick: ()=>{
+                                                            accountHandler();
+                                                        },
+                                                        children: accButton
+                                                    }, void 0, false, {
+                                                        fileName: "src/components/Header.js",
+                                                        lineNumber: 49,
+                                                        columnNumber: 45
+                                                    }, undefined)
+                                                }, void 0, false, {
+                                                    fileName: "src/components/Header.js",
+                                                    lineNumber: 48,
+                                                    columnNumber: 41
+                                                }, undefined)
+                                            }, void 0, false, {
+                                                fileName: "src/components/Header.js",
+                                                lineNumber: 47,
                                                 columnNumber: 37
                                             }, undefined)
-                                        }, void 0, false, {
-                                            fileName: "src/components/Header.js",
-                                            lineNumber: 62,
-                                            columnNumber: 33
-                                        }, undefined),
-                                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-                                            className: "flex items-center font-normal mx-5",
-                                            children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("span", {
-                                                className: "relative",
-                                                children: [
-                                                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("img", {
-                                                        className: "w-12",
-                                                        src: (0, _avatarPngDefault.default),
-                                                        alt: "Avatar"
+                                        ]
+                                    }, void 0, true, {
+                                        fileName: "src/components/Header.js",
+                                        lineNumber: 41,
+                                        columnNumber: 33
+                                    }, undefined),
+                                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("ul", {
+                                        className: "flex flex-col lg:flex-row lg:justify-end lg:items-center gap-x-3 md:gap-x-8 lg:text-lg xl:text-xl font-semibold text-stone-800 dark:text-stone-200 fixed lg:relative left-[-255px] lg:left-0 top-0 bg-slate-700 lg:bg-transparent h-full lg:h-auto w-[250px] lg:w-auto p-5 lg:p-0 z-10 lg:z-auto gap-y-3 lg:gap-y-0",
+                                        children: [
+                                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("li", {
+                                                children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouterDom.Link), {
+                                                    to: "/",
+                                                    children: "Home"
+                                                }, void 0, false, {
+                                                    fileName: "src/components/Header.js",
+                                                    lineNumber: 55,
+                                                    columnNumber: 37
+                                                }, undefined)
+                                            }, void 0, false, {
+                                                fileName: "src/components/Header.js",
+                                                lineNumber: 55,
+                                                columnNumber: 33
+                                            }, undefined),
+                                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("li", {
+                                                children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouterDom.Link), {
+                                                    to: "/about",
+                                                    children: "About Us"
+                                                }, void 0, false, {
+                                                    fileName: "src/components/Header.js",
+                                                    lineNumber: 56,
+                                                    columnNumber: 37
+                                                }, undefined)
+                                            }, void 0, false, {
+                                                fileName: "src/components/Header.js",
+                                                lineNumber: 56,
+                                                columnNumber: 33
+                                            }, undefined),
+                                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("li", {
+                                                children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouterDom.Link), {
+                                                    to: "/contact",
+                                                    children: "Contact Us"
+                                                }, void 0, false, {
+                                                    fileName: "src/components/Header.js",
+                                                    lineNumber: 57,
+                                                    columnNumber: 37
+                                                }, undefined)
+                                            }, void 0, false, {
+                                                fileName: "src/components/Header.js",
+                                                lineNumber: 57,
+                                                columnNumber: 33
+                                            }, undefined),
+                                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("li", {
+                                                children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouterDom.Link), {
+                                                    to: "/grocery",
+                                                    children: "Grocery"
+                                                }, void 0, false, {
+                                                    fileName: "src/components/Header.js",
+                                                    lineNumber: 58,
+                                                    columnNumber: 37
+                                                }, undefined)
+                                            }, void 0, false, {
+                                                fileName: "src/components/Header.js",
+                                                lineNumber: 58,
+                                                columnNumber: 33
+                                            }, undefined),
+                                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("li", {
+                                                children: "Cart"
+                                            }, void 0, false, {
+                                                fileName: "src/components/Header.js",
+                                                lineNumber: 59,
+                                                columnNumber: 33
+                                            }, undefined),
+                                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("li", {
+                                                children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                                                    className: "mx-5",
+                                                    children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("button", {
+                                                        type: "button",
+                                                        className: "text-base bg-red-400 text-stone-50 px-5 py-2 flex items-center justify-center rounded-md",
+                                                        onClick: ()=>{
+                                                            accountHandler();
+                                                        },
+                                                        children: accButton
                                                     }, void 0, false, {
                                                         fileName: "src/components/Header.js",
-                                                        lineNumber: 70,
+                                                        lineNumber: 62,
                                                         columnNumber: 41
+                                                    }, undefined)
+                                                }, void 0, false, {
+                                                    fileName: "src/components/Header.js",
+                                                    lineNumber: 61,
+                                                    columnNumber: 37
+                                                }, undefined)
+                                            }, void 0, false, {
+                                                fileName: "src/components/Header.js",
+                                                lineNumber: 60,
+                                                columnNumber: 33
+                                            }, undefined)
+                                        ]
+                                    }, void 0, true, {
+                                        fileName: "src/components/Header.js",
+                                        lineNumber: 54,
+                                        columnNumber: 29
+                                    }, undefined),
+                                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                                        className: "flex justify-end lg:justify-end items-center mt-2 lg:mt-0",
+                                        children: [
+                                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                                                className: "",
+                                                children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("button", {
+                                                    onClick: toggleMode,
+                                                    children: isDarkMode ? /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _lightModeDefault.default), {}, void 0, false, {
+                                                        fileName: "src/components/Header.js",
+                                                        lineNumber: 69,
+                                                        columnNumber: 55
+                                                    }, undefined) : /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _darkModeDefault.default), {}, void 0, false, {
+                                                        fileName: "src/components/Header.js",
+                                                        lineNumber: 69,
+                                                        columnNumber: 74
+                                                    }, undefined)
+                                                }, void 0, false, {
+                                                    fileName: "src/components/Header.js",
+                                                    lineNumber: 68,
+                                                    columnNumber: 37
+                                                }, undefined)
+                                            }, void 0, false, {
+                                                fileName: "src/components/Header.js",
+                                                lineNumber: 67,
+                                                columnNumber: 33
+                                            }, undefined),
+                                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                                                className: "flex items-center font-normal mx-5",
+                                                children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("span", {
+                                                    className: "relative",
+                                                    children: [
+                                                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("img", {
+                                                            className: "w-12",
+                                                            src: (0, _avatarPngDefault.default),
+                                                            alt: "Avatar"
+                                                        }, void 0, false, {
+                                                            fileName: "src/components/Header.js",
+                                                            lineNumber: 75,
+                                                            columnNumber: 41
+                                                        }, undefined),
+                                                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("span", {
+                                                            className: `w-3 h-3 rounded-full ${isOnline ? "bg-green-500" : "bg-red-600"} block absolute bottom-[4px] right-0`
+                                                        }, void 0, false, {
+                                                            fileName: "src/components/Header.js",
+                                                            lineNumber: 76,
+                                                            columnNumber: 41
+                                                        }, undefined)
+                                                    ]
+                                                }, void 0, true, {
+                                                    fileName: "src/components/Header.js",
+                                                    lineNumber: 74,
+                                                    columnNumber: 37
+                                                }, undefined)
+                                            }, void 0, false, {
+                                                fileName: "src/components/Header.js",
+                                                lineNumber: 73,
+                                                columnNumber: 33
+                                            }, undefined),
+                                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("button", {
+                                                className: "humberger-menu flex items-center relative lg:hidden",
+                                                onClick: handleNavMenu,
+                                                children: [
+                                                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("span", {
+                                                        className: "line-icon bg-slate-700 dark:bg-white"
+                                                    }, void 0, false, {
+                                                        fileName: "src/components/Header.js",
+                                                        lineNumber: 80,
+                                                        columnNumber: 37
                                                     }, undefined),
                                                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("span", {
-                                                        className: `w-3 h-3 rounded-full ${isOnline ? "bg-green-500" : "bg-red-600"} block absolute bottom-[4px] right-0`
+                                                        className: "line-icon bg-slate-700 dark:bg-white"
                                                     }, void 0, false, {
                                                         fileName: "src/components/Header.js",
-                                                        lineNumber: 71,
-                                                        columnNumber: 41
+                                                        lineNumber: 81,
+                                                        columnNumber: 37
+                                                    }, undefined),
+                                                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("span", {
+                                                        className: "line-icon bg-slate-700 dark:bg-white"
+                                                    }, void 0, false, {
+                                                        fileName: "src/components/Header.js",
+                                                        lineNumber: 82,
+                                                        columnNumber: 37
+                                                    }, undefined),
+                                                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("span", {
+                                                        className: "line-icon bg-slate-700 dark:bg-white"
+                                                    }, void 0, false, {
+                                                        fileName: "src/components/Header.js",
+                                                        lineNumber: 83,
+                                                        columnNumber: 37
                                                     }, undefined)
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "src/components/Header.js",
-                                                lineNumber: 69,
-                                                columnNumber: 37
+                                                lineNumber: 79,
+                                                columnNumber: 33
                                             }, undefined)
-                                        }, void 0, false, {
-                                            fileName: "src/components/Header.js",
-                                            lineNumber: 68,
-                                            columnNumber: 33
-                                        }, undefined),
-                                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("button", {
-                                            className: "humberger-menu flex items-center relative lg:hidden",
-                                            onClick: handleNavMenu,
-                                            children: [
-                                                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("span", {
-                                                    className: "line-icon bg-slate-700 dark:bg-white"
-                                                }, void 0, false, {
-                                                    fileName: "src/components/Header.js",
-                                                    lineNumber: 75,
-                                                    columnNumber: 37
-                                                }, undefined),
-                                                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("span", {
-                                                    className: "line-icon bg-slate-700 dark:bg-white"
-                                                }, void 0, false, {
-                                                    fileName: "src/components/Header.js",
-                                                    lineNumber: 76,
-                                                    columnNumber: 37
-                                                }, undefined),
-                                                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("span", {
-                                                    className: "line-icon bg-slate-700 dark:bg-white"
-                                                }, void 0, false, {
-                                                    fileName: "src/components/Header.js",
-                                                    lineNumber: 77,
-                                                    columnNumber: 37
-                                                }, undefined),
-                                                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("span", {
-                                                    className: "line-icon bg-slate-700 dark:bg-white"
-                                                }, void 0, false, {
-                                                    fileName: "src/components/Header.js",
-                                                    lineNumber: 78,
-                                                    columnNumber: 37
-                                                }, undefined)
-                                            ]
-                                        }, void 0, true, {
-                                            fileName: "src/components/Header.js",
-                                            lineNumber: 74,
-                                            columnNumber: 33
-                                        }, undefined)
-                                    ]
-                                }, void 0, true, {
-                                    fileName: "src/components/Header.js",
-                                    lineNumber: 61,
-                                    columnNumber: 29
-                                }, undefined)
-                            ]
-                        }, void 0, true, {
+                                        ]
+                                    }, void 0, true, {
+                                        fileName: "src/components/Header.js",
+                                        lineNumber: 66,
+                                        columnNumber: 29
+                                    }, undefined)
+                                ]
+                            }, void 0, true, {
+                                fileName: "src/components/Header.js",
+                                lineNumber: 39,
+                                columnNumber: 25
+                            }, undefined)
+                        }, void 0, false, {
                             fileName: "src/components/Header.js",
-                            lineNumber: 34,
-                            columnNumber: 25
+                            lineNumber: 38,
+                            columnNumber: 21
                         }, undefined)
-                    }, void 0, false, {
-                        fileName: "src/components/Header.js",
-                        lineNumber: 33,
-                        columnNumber: 21
-                    }, undefined)
-                ]
-            }, void 0, true, {
+                    ]
+                }, void 0, true, {
+                    fileName: "src/components/Header.js",
+                    lineNumber: 34,
+                    columnNumber: 17
+                }, undefined)
+            }, void 0, false, {
                 fileName: "src/components/Header.js",
-                lineNumber: 29,
-                columnNumber: 17
+                lineNumber: 33,
+                columnNumber: 13
             }, undefined)
-        }, void 0, false, {
-            fileName: "src/components/Header.js",
-            lineNumber: 28,
-            columnNumber: 13
-        }, undefined)
-    }, void 0, false, {
+        ]
+    }, void 0, true, {
         fileName: "src/components/Header.js",
         lineNumber: 27,
         columnNumber: 9
@@ -44646,10 +44670,10 @@ const About = ()=>{
         }
     };
     return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-        className: "container mx-auto mt-10",
+        className: "container mx-auto px-4 lg:px-0 mt-10",
         children: [
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h1", {
-                className: "text-2xl text mb-9",
+                className: "text-2xl text mb-9 text-center sm:text-left",
                 children: "Welcome to Shopee Food App"
             }, void 0, false, {
                 fileName: "src/components/About.js",
@@ -44657,16 +44681,17 @@ const About = ()=>{
                 columnNumber: 13
             }, undefined),
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-                className: "flex justify-between items-center",
+                className: "flex flex-col sm:flex-row justify-between items-center",
                 children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _userDefault.default), {
                     name: users.name,
                     bio: users.bio,
                     avatar_url: users.avatar_url,
                     company: users.company,
                     location: users.location,
-                    email: users.email,
+                    email: "sudhabnrj@gmail.com",
                     public_repos: users.public_repos,
-                    html_url: users.html_url
+                    html_url: users.html_url,
+                    linkedin_url: "https://www.linkedin.com/in/sudhachandan-banerjee"
                 }, void 0, false, {
                     fileName: "src/components/About.js",
                     lineNumber: 31,
@@ -44709,11 +44734,15 @@ var _reactRouterDom = require("react-router-dom");
 var _userCss = require("./user.css");
 var _gitHub = require("@mui/icons-material/GitHub");
 var _gitHubDefault = parcelHelpers.interopDefault(_gitHub);
-const User = ({ name, location, avatar_url, bio, company, email, public_repos, html_url })=>{
+var _linkedIn = require("@mui/icons-material/LinkedIn");
+var _linkedInDefault = parcelHelpers.interopDefault(_linkedIn);
+var _peopleOutline = require("@mui/icons-material/PeopleOutline");
+var _peopleOutlineDefault = parcelHelpers.interopDefault(_peopleOutline);
+const User = ({ name, location, avatar_url, bio, company, email, public_repos, html_url, linkedin_url, following, followers })=>{
     return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _jsxDevRuntime.Fragment), {
         children: [
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-                className: "rounded-full bg-slate-300 border border-slate-400 w-1/4",
+                className: "rounded-full bg-slate-300 border border-slate-400 w-1/4 mb-5 sm:mb-0",
                 children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("img", {
                     src: avatar_url,
                     alt: "",
@@ -44721,30 +44750,31 @@ const User = ({ name, location, avatar_url, bio, company, email, public_repos, h
                     alt: name
                 }, void 0, false, {
                     fileName: "src/components/User.js",
-                    lineNumber: 9,
+                    lineNumber: 11,
                     columnNumber: 17
                 }, undefined)
             }, void 0, false, {
                 fileName: "src/components/User.js",
-                lineNumber: 8,
+                lineNumber: 10,
                 columnNumber: 13
             }, undefined),
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-                className: "flex flex-col bg-slate-100 dark:bg-slate-700 rounded-md w-[70%] p-5 shadow-md",
+                className: "flex flex-col bg-slate-100 dark:bg-slate-700 rounded-md w-full sm:w-[70%] p-5 shadow-md",
                 children: [
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h2", {
                         className: "text-2xl",
                         children: name
                     }, void 0, false, {
                         fileName: "src/components/User.js",
-                        lineNumber: 12,
+                        lineNumber: 14,
                         columnNumber: 17
                     }, undefined),
-                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h3", {
+                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
+                        className: "text-slate-200",
                         children: bio
                     }, void 0, false, {
                         fileName: "src/components/User.js",
-                        lineNumber: 13,
+                        lineNumber: 15,
                         columnNumber: 17
                     }, undefined),
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
@@ -44753,42 +44783,17 @@ const User = ({ name, location, avatar_url, bio, company, email, public_repos, h
                                 children: "Company: "
                             }, void 0, false, {
                                 fileName: "src/components/User.js",
-                                lineNumber: 14,
-                                columnNumber: 20
-                            }, undefined),
-                            company
-                        ]
-                    }, void 0, true, {
-                        fileName: "src/components/User.js",
-                        lineNumber: 14,
-                        columnNumber: 17
-                    }, undefined),
-                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
-                        children: [
-                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("strong", {
-                                children: "Location: "
-                            }, void 0, false, {
-                                fileName: "src/components/User.js",
-                                lineNumber: 15,
-                                columnNumber: 20
-                            }, undefined),
-                            location
-                        ]
-                    }, void 0, true, {
-                        fileName: "src/components/User.js",
-                        lineNumber: 15,
-                        columnNumber: 17
-                    }, undefined),
-                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
-                        children: [
-                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("strong", {
-                                children: "Email: "
-                            }, void 0, false, {
-                                fileName: "src/components/User.js",
                                 lineNumber: 16,
                                 columnNumber: 20
                             }, undefined),
-                            email
+                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("span", {
+                                className: "text-slate-400",
+                                children: company
+                            }, void 0, false, {
+                                fileName: "src/components/User.js",
+                                lineNumber: 16,
+                                columnNumber: 46
+                            }, undefined)
                         ]
                     }, void 0, true, {
                         fileName: "src/components/User.js",
@@ -44798,36 +44803,111 @@ const User = ({ name, location, avatar_url, bio, company, email, public_repos, h
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
                         children: [
                             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("strong", {
-                                children: "Public repos: "
+                                children: "Location: "
                             }, void 0, false, {
                                 fileName: "src/components/User.js",
                                 lineNumber: 17,
                                 columnNumber: 20
                             }, undefined),
-                            public_repos
+                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("span", {
+                                className: "text-slate-400",
+                                children: location
+                            }, void 0, false, {
+                                fileName: "src/components/User.js",
+                                lineNumber: 17,
+                                columnNumber: 47
+                            }, undefined)
                         ]
                     }, void 0, true, {
                         fileName: "src/components/User.js",
                         lineNumber: 17,
                         columnNumber: 17
                     }, undefined),
-                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouterDom.Link), {
-                        to: html_url,
-                        target: "_blank",
-                        children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _gitHubDefault.default), {}, void 0, false, {
-                            fileName: "src/components/User.js",
-                            lineNumber: 18,
-                            columnNumber: 53
-                        }, undefined)
-                    }, void 0, false, {
+                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
+                        children: [
+                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("strong", {
+                                children: "Email: "
+                            }, void 0, false, {
+                                fileName: "src/components/User.js",
+                                lineNumber: 18,
+                                columnNumber: 20
+                            }, undefined),
+                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("span", {
+                                className: "text-slate-400",
+                                children: email
+                            }, void 0, false, {
+                                fileName: "src/components/User.js",
+                                lineNumber: 18,
+                                columnNumber: 44
+                            }, undefined)
+                        ]
+                    }, void 0, true, {
                         fileName: "src/components/User.js",
                         lineNumber: 18,
+                        columnNumber: 17
+                    }, undefined),
+                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
+                        children: [
+                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("strong", {
+                                children: "Public repos: "
+                            }, void 0, false, {
+                                fileName: "src/components/User.js",
+                                lineNumber: 19,
+                                columnNumber: 20
+                            }, undefined),
+                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("span", {
+                                className: "text-slate-400",
+                                children: public_repos
+                            }, void 0, false, {
+                                fileName: "src/components/User.js",
+                                lineNumber: 19,
+                                columnNumber: 51
+                            }, undefined)
+                        ]
+                    }, void 0, true, {
+                        fileName: "src/components/User.js",
+                        lineNumber: 19,
+                        columnNumber: 17
+                    }, undefined),
+                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                        className: "flex justify-start gap-1",
+                        children: [
+                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouterDom.Link), {
+                                to: html_url,
+                                target: "_blank",
+                                children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _gitHubDefault.default), {}, void 0, false, {
+                                    fileName: "src/components/User.js",
+                                    lineNumber: 21,
+                                    columnNumber: 57
+                                }, undefined)
+                            }, void 0, false, {
+                                fileName: "src/components/User.js",
+                                lineNumber: 21,
+                                columnNumber: 21
+                            }, undefined),
+                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouterDom.Link), {
+                                to: linkedin_url,
+                                target: "_blank",
+                                children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _linkedInDefault.default), {}, void 0, false, {
+                                    fileName: "src/components/User.js",
+                                    lineNumber: 22,
+                                    columnNumber: 61
+                                }, undefined)
+                            }, void 0, false, {
+                                fileName: "src/components/User.js",
+                                lineNumber: 22,
+                                columnNumber: 21
+                            }, undefined)
+                        ]
+                    }, void 0, true, {
+                        fileName: "src/components/User.js",
+                        lineNumber: 20,
                         columnNumber: 17
                     }, undefined)
                 ]
             }, void 0, true, {
                 fileName: "src/components/User.js",
-                lineNumber: 11,
+                lineNumber: 13,
                 columnNumber: 13
             }, undefined)
         ]
@@ -44843,7 +44923,7 @@ $RefreshReg$(_c, "User");
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-dev-runtime":"iTorj","react-router-dom":"9xmpe","./user.css":"lfeAO","@mui/icons-material/GitHub":"f7ZLb","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"lfeAO":[function() {},{}],"f7ZLb":[function(require,module,exports) {
+},{"react/jsx-dev-runtime":"iTorj","react-router-dom":"9xmpe","./user.css":"lfeAO","@mui/icons-material/GitHub":"f7ZLb","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru","@mui/icons-material/LinkedIn":"5rzym","@mui/icons-material/PeopleOutline":"BhB8k"}],"lfeAO":[function() {},{}],"f7ZLb":[function(require,module,exports) {
 "use strict";
 "use client";
 var _interopRequireDefault = require("7e481efb12742168");
@@ -44881,7 +44961,59 @@ var _default = exports.default = (0, _createSvgIcon.default)(/*#__PURE__*/ (0, _
     d: "M12 1.27a11 11 0 00-3.48 21.46c.55.09.73-.28.73-.55v-1.84c-3.03.64-3.67-1.46-3.67-1.46-.55-1.29-1.28-1.65-1.28-1.65-.92-.65.1-.65.1-.65 1.1 0 1.73 1.1 1.73 1.1.92 1.65 2.57 1.2 3.21.92a2 2 0 01.64-1.47c-2.47-.27-5.04-1.19-5.04-5.5 0-1.1.46-2.1 1.2-2.84a3.76 3.76 0 010-2.93s.91-.28 3.11 1.1c1.8-.49 3.7-.49 5.5 0 2.1-1.38 3.02-1.1 3.02-1.1a3.76 3.76 0 010 2.93c.83.74 1.2 1.74 1.2 2.94 0 4.21-2.57 5.13-5.04 5.4.45.37.82.92.82 2.02v3.03c0 .27.1.64.73.55A11 11 0 0012 1.27"
 }), "GitHub");
 
-},{"7e481efb12742168":"7XM86","27d4079516ea4b0e":"21dqq","b5cd731042112a56":"lVV9C","51339466f03caeb4":"6AEwr"}],"6kCdM":[function() {},{}],"cgAOG":[function(require,module,exports) {
+},{"7e481efb12742168":"7XM86","27d4079516ea4b0e":"21dqq","b5cd731042112a56":"lVV9C","51339466f03caeb4":"6AEwr"}],"5rzym":[function(require,module,exports) {
+"use strict";
+"use client";
+var _interopRequireDefault = require("6fe33859763e457");
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+exports.default = void 0;
+var React = _interopRequireWildcard(require("35ed9598ac4c29ce"));
+var _createSvgIcon = _interopRequireDefault(require("935405db5f25d6fd"));
+var _jsxRuntime = require("81c2f03d8d2bd071");
+function _getRequireWildcardCache(e) {
+    if ("function" != typeof WeakMap) return null;
+    var r = new WeakMap(), t = new WeakMap();
+    return (_getRequireWildcardCache = function(e) {
+        return e ? t : r;
+    })(e);
+}
+function _interopRequireWildcard(e, r) {
+    if (!r && e && e.__esModule) return e;
+    if (null === e || "object" != typeof e && "function" != typeof e) return {
+        default: e
+    };
+    var t = _getRequireWildcardCache(r);
+    if (t && t.has(e)) return t.get(e);
+    var n = {
+        __proto__: null
+    }, a = Object.defineProperty && Object.getOwnPropertyDescriptor;
+    for(var u in e)if ("default" !== u && Object.prototype.hasOwnProperty.call(e, u)) {
+        var i = a ? Object.getOwnPropertyDescriptor(e, u) : null;
+        i && (i.get || i.set) ? Object.defineProperty(n, u, i) : n[u] = e[u];
+    }
+    return n.default = e, t && t.set(e, n), n;
+}
+var _default = exports.default = (0, _createSvgIcon.default)(/*#__PURE__*/ (0, _jsxRuntime.jsx)("path", {
+    d: "M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.32 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.79M6.88 8.56a1.68 1.68 0 0 0 1.68-1.68c0-.93-.75-1.69-1.68-1.69a1.69 1.69 0 0 0-1.69 1.69c0 .93.76 1.68 1.69 1.68m1.39 9.94v-8.37H5.5v8.37h2.77z"
+}), "LinkedIn");
+
+},{"6fe33859763e457":"7XM86","35ed9598ac4c29ce":"21dqq","935405db5f25d6fd":"lVV9C","81c2f03d8d2bd071":"6AEwr"}],"BhB8k":[function(require,module,exports) {
+"use strict";
+"use client";
+var _interopRequireDefault = require("65eb7fd03f8ad09d");
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+exports.default = void 0;
+var _createSvgIcon = _interopRequireDefault(require("f0db9ddf79fe9dae"));
+var _jsxRuntime = require("49df01b5db0d31ef");
+var _default = exports.default = (0, _createSvgIcon.default)(/*#__PURE__*/ (0, _jsxRuntime.jsx)("path", {
+    d: "M16.5 13c-1.2 0-3.07.34-4.5 1-1.43-.67-3.3-1-4.5-1C5.33 13 1 14.08 1 16.25V19h22v-2.75c0-2.17-4.33-3.25-6.5-3.25m-4 4.5h-10v-1.25c0-.54 2.56-1.75 5-1.75s5 1.21 5 1.75zm9 0H14v-1.25c0-.46-.2-.86-.52-1.22.88-.3 1.96-.53 3.02-.53 2.44 0 5 1.21 5 1.75zM7.5 12c1.93 0 3.5-1.57 3.5-3.5S9.43 5 7.5 5 4 6.57 4 8.5 5.57 12 7.5 12m0-5.5c1.1 0 2 .9 2 2s-.9 2-2 2-2-.9-2-2 .9-2 2-2m9 5.5c1.93 0 3.5-1.57 3.5-3.5S18.43 5 16.5 5 13 6.57 13 8.5s1.57 3.5 3.5 3.5m0-5.5c1.1 0 2 .9 2 2s-.9 2-2 2-2-.9-2-2 .9-2 2-2"
+}), "PeopleOutline");
+
+},{"65eb7fd03f8ad09d":"7XM86","f0db9ddf79fe9dae":"lVV9C","49df01b5db0d31ef":"6AEwr"}],"6kCdM":[function() {},{}],"cgAOG":[function(require,module,exports) {
 var $parcel$ReactRefreshHelpers$ee46 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
 var prevRefreshReg = window.$RefreshReg$;
 var prevRefreshSig = window.$RefreshSig$;

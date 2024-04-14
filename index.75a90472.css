@@ -471,6 +471,10 @@ img, video {
   margin-top: 2.25rem;
 }
 
+.mb-5 {
+  margin-bottom: 1.25rem;
+}
+
 .block {
   display: block;
 }
@@ -606,6 +610,10 @@ img, video {
 
 .justify-between {
   justify-content: space-between;
+}
+
+.gap-1 {
+  gap: .25rem;
 }
 
 .gap-x-3 {
@@ -759,6 +767,16 @@ img, video {
 .bg-white {
   --tw-bg-opacity: 1;
   background-color: rgb(255 255 255 / var(--tw-bg-opacity));
+}
+
+.bg-slate-800 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(30 41 59 / var(--tw-bg-opacity));
+}
+
+.bg-slate-500 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(100 116 139 / var(--tw-bg-opacity));
 }
 
 .bg-gradient-to-b {
@@ -993,6 +1011,36 @@ img, video {
   color: rgb(255 255 255 / var(--tw-text-opacity));
 }
 
+.text-slate-700 {
+  --tw-text-opacity: 1;
+  color: rgb(51 65 85 / var(--tw-text-opacity));
+}
+
+.text-slate-300 {
+  --tw-text-opacity: 1;
+  color: rgb(203 213 225 / var(--tw-text-opacity));
+}
+
+.text-slate-900 {
+  --tw-text-opacity: 1;
+  color: rgb(15 23 42 / var(--tw-text-opacity));
+}
+
+.text-slate-100 {
+  --tw-text-opacity: 1;
+  color: rgb(241 245 249 / var(--tw-text-opacity));
+}
+
+.text-slate-500 {
+  --tw-text-opacity: 1;
+  color: rgb(100 116 139 / var(--tw-text-opacity));
+}
+
+.text-slate-200 {
+  --tw-text-opacity: 1;
+  color: rgb(226 232 240 / var(--tw-text-opacity));
+}
+
 .shadow-md {
   --tw-shadow: 0 4px 6px -1px #0000001a, 0 2px 4px -2px #0000001a;
   --tw-shadow-colored: 0 4px 6px -1px var(--tw-shadow-color), 0 2px 4px -2px var(--tw-shadow-color);
@@ -1179,6 +1227,10 @@ header.opened span.line-icon:nth-child(4) {
     order: 2;
   }
 
+  .sm\:mb-0 {
+    margin-bottom: 0;
+  }
+
   .sm\:w-1\/2 {
     width: 50%;
   }
@@ -1211,6 +1263,10 @@ header.opened span.line-icon:nth-child(4) {
     width: auto;
   }
 
+  .sm\:w-\[70\%\] {
+    width: 70%;
+  }
+
   .sm\:flex-row {
     flex-direction: row;
   }
@@ -1230,6 +1286,10 @@ header.opened span.line-icon:nth-child(4) {
 
   .sm\:pr-9 {
     padding-right: 2.25rem;
+  }
+
+  .sm\:text-left {
+    text-align: left;
   }
 
   .sm\:text-2xl {
