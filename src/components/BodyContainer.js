@@ -136,7 +136,7 @@ const BodyContainer = () => {
                                 Top Resturants
                             </button> */}
                             <button className={`text-sm rounded-full border border-stone-300 border-solid px-3 py-1 hover:text-stone-50 hover:bg-rose-400 hover:border-rose-400 transition-all mr-1 capitalize ${activeFilter === 'fourplus' ? 'bg-rose-600 text-stone-50' : ''}`} onClick={() => handleFilter('fourplus')}>
-                                    rating 4.0+
+                                    rating 4.5+
                             </button>
                             {/* <button className="text-sm rounded-full border border-stone-300 border-solid px-3 py-1 hover:text-stone-50 hover:bg-rose-400 hover:border-rose-400 transition-all mr-1 capitalize">
                                     Pure veg 
