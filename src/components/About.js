@@ -1,34 +1,37 @@
-import { Component } from 'react';
+//import { Component } from 'react';
 import User from './User';
 import './about.css';
-import UserClass from './UserClass';
+//import UserClass from './UserClass';
+import { useState, useEffect } from 'react'
 
-class About extends Component{
-    constructor(props){
-        super(props);
-        console.log('Parent constructure is called!');
-    }
 
-    componentDidMount(){
-        console.log('Parent ComponentDidMount is called!');
-    }
+const About = () => {
 
-    render(){
-        console.log('Parent rendered is called!');
-        return(
-            <div className="container">
-                <h1>Welcome to About Us Page!</h1>
-                <hr className="hr" />
-                <div className="user-list-container">
-                    {/* <User name="Sudha Chandan Banerjee" location="Kolkata" />
-                    <User name="Tusar panja" location="Medinapur" /> */}
-    
-                    <UserClass name="SC Banerjee" location="Kolkata" />
-                    <UserClass name="T panja" location="Medinapur" />
-                </div>
+    const  [users, setUsers] = useState('');
+
+    useEffect(()=> {
+        fetchUser();
+    }, []);
+
+    const fetchUser = async () => {
+        try{
+            const data = await fetch('https://api.github.com/users/sudhabnrj');
+            const json = await data.json();
+            //console.log(json);
+            setUsers(json);
+        }catch(error){
+            console.error('Error in Fetching Data!', error);
+        }
+    };
+
+    return(
+        <div className="container mx-auto mt-10">
+            <h1 className="text-2xl text mb-9">Welcome to Shopee Food App</h1>
+            <div className="flex justify-between items-center">
+                <User name={users.name} bio={users.bio} avatar_url={users.avatar_url} company={users.company} location={users.location} email={users.email} public_repos={users.public_repos} html_url={users.html_url} />
             </div>
-        );
-    }
-}
+        </div>
+    );
+};
 
 export default About;

@@ -6,6 +6,7 @@ import { useParams } from 'react-router-dom';
 import useRestaurantMenu from '../utils/useRestaurantMenu';
 import vegImg from '../images/veg.png';
 import nonVegImg from '../images/non-veg.png';
+import RestaurantsCategory from './RestaurantsCategory';
 
 
 
@@ -18,7 +19,7 @@ const RestaurantsMenu = () => {
     if (resInfo === null) return <Shimmer/>;
 
     const { 
-        name, 
+        name,
         areaName,
         city,
         expectationNotifiers,
@@ -36,6 +37,14 @@ const RestaurantsMenu = () => {
     const { itemCards } = resInfo?.cards[4]?.groupedCard?.cardGroupMap?.REGULAR?.cards[1]?.card?.card && 
     resInfo?.cards[4]?.groupedCard?.cardGroupMap?.REGULAR?.cards[2]?.card?.card || [];
 
+    //console.log(resInfo?.cards[4]?.groupedCard?.cardGroupMap?.REGULAR?.cards);
+
+    const cardTitle = resInfo?.cards[4]?.groupedCard?.cardGroupMap?.REGULAR?.cards[1]?.card?.card;
+
+    const itemsCategory = resInfo?.cards[4]?.groupedCard?.cardGroupMap?.REGULAR?.cards.filter(
+        category => category.card?.card?.["@type"] === "type.googleapis.com/swiggy.presentation.food.v2.ItemCategory")
+    //console.log(itemsCategory);
+
     
 
     return (
@@ -44,8 +53,8 @@ const RestaurantsMenu = () => {
                 <div className="container mx-auto px-4 lg:px-0">
                     <div className="mt-10">
                         <h1 className="text-3xl font-bold mb-3">{name}</h1>
-                        <div className="bg-gradient-to-b from-transparent to-slate-200 rounded-3xl p-2 sm:p-5">
-                            <div className="bg-white border rounded-xl p-3 sm:p-5">
+                        <div className="bg-gradient-to-b from-transparent dark:to-slate-700 to-slate-200 rounded-3xl p-2 sm:p-5">
+                            <div className="bg-white dark:bg-slate-800 border rounded-xl dark:border-slate-700 p-3 sm:p-5">
                                 <div className="flex justify-start items-center">
                                     <div className="flex justify-start items-center">
                                         <StarsIcon className="text-green-700 mr-1 !w-4 !h-4" />
@@ -59,14 +68,14 @@ const RestaurantsMenu = () => {
                                 <p className="text-rose-500 font-medium my-2">{labels[2].message}</p>
                                 <div className="text-sm font-medium gray-divider relative pl-4">
                                     <span className="absolute h-full bg-stone-500 w-[1px] left-[2px]"></span>
-                                    <div className=" border-l-emerald-50 border-l-[1px]">
-                                        <p><span>Outlet</span><span className="ml-3 text-stone-500">{city} | {areaName}</span></p> 
+                                    <div className="">
+                                        <p><span>Outlet</span><span className="ml-3 text-stone-500 dark:text-slate-300">{city} | {areaName}</span></p> 
                                         <p><span>{sla.minDeliveryTime}-{sla.maxDeliveryTime}</span><span>mins</span></p>
                                     </div>
                                 </div>
                                 {sanitizedText ? (
                                 <div className="flex justify-start items-center mt-3 pt-1 border-t">
-                                    <span className="text-stone-500 font-medium"><DeliveryDiningIcon className="text-stone-500 mr-1" />
+                                    <span className="text-stone-500 dark:text-slate-300 font-medium"><DeliveryDiningIcon className="text-stone-500 mr-1" />
                                         {sanitizedText}
                                     </span>
                                 </div>) : null
@@ -76,23 +85,9 @@ const RestaurantsMenu = () => {
                     </div>
 
                     <div className="restaurants-menu-list">
-                        <h3 className="mt-5 mb-6 text-2xl font-bold">Recommended <span className>({itemCards.length})</span></h3>
-                        {itemCards.map((menu)=> (
-                            <div className="flex justify-between items-start mb-9 pb-9 border-b" key={menu?.card?.info?.id}>
-                                <div className="order-2 sm:order-1 w-full pl-6 sm:w-4/5 pr-0 sm:pr-9">
-                                    <img className="w-4" src={menu?.card?.info?.isVeg ? vegImg : nonVegImg} alt={menu?.card?.info?.isVeg ? 'Veg' : 'Non-Veg'} />                                
-                                    <h4 className="font-semibold text-sm sm:text-xl text-stone-600 my-1">{menu?.card?.info?.name}</h4>
-                                    <span className="font-semibold text-md text-rose-500 my-1">₹{menu?.card?.info?.defaultPrice / 100 || menu.card.info.price / 100}</span>
-                                    <p className="text-stone-500 text-xs sm:text-sm mt-2 mb-3">{menu?.card?.info?.description}</p>
-                                    <button className="bg-rose-400 text-white text-sm sm:text-base font-bold px-4 sm:px-2 w-auto sm:w-[140px] md:w-1/4 py-2 rounded-md" type="button">Add to cart</button>
-                                </div>
-                                <div className="order-1 sm:order-2 w-[100px] sm:w-1/5 relative">
-                                    <img alt="{menu.card.info.name}" className="rounded-xl w-[100px] sm:w-auto aspect-square object-cover" src={SINGLE_IMAGE + menu?.card?.info?.imageId} />
-                                    
-                                </div>
-                            </div>
-                        ))}                       
-                        
+                        {itemsCategory.map((category)=> (
+                            <RestaurantsCategory key={category?.card?.card.title} data={category?.card?.card}/>
+                        ))}
                     </div>
                 </div>
             </div>

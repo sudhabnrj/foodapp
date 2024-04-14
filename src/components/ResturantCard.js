@@ -8,7 +8,7 @@ const ResturantCard = (props) =>{
     const {cloudinaryImageId, name, avgRating, cuisines, costForTwo, sla} = resData.info;
 
     return(
-        <div className="w-full flex flex-col bg-stone-50 hover:bg-stone-100 h-full rounded-md drop-shadow hover:drop-shadow-xl transition-all">
+        <div className="w-full flex flex-col bg-stone-50 dark:bg-slate-800 hover:bg-stone-100 h-full rounded-md drop-shadow hover:drop-shadow-xl transition-all">
             <div className="relative">
                 <img className="aspect-video object-cover rounded-t-md" alt="" src={CDN_URL + cloudinaryImageId}/>
                 <div className="absolute bottom-0 p-3 w-full font-black text-2xl 
@@ -28,5 +28,20 @@ const ResturantCard = (props) =>{
         </div>
     );
 };
+
+//Higher Order Component FOR Discount Tag
+
+export const discountTag = (ResturantCard) => {
+    return (props) => {
+        return(
+            <div className="relative">
+                <label className="absolute bg-red-700 text-white z-10 rounded-e-sm px-4 py-1 mt-1 font-medium">Discount</label>
+                <ResturantCard {...props} />
+            </div>
+        );
+    }
+}
+
+
 
 export default ResturantCard;

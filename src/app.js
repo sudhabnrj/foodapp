@@ -9,16 +9,19 @@ import Error from './components/Error';
 import RestaurantsMenu from './components/RestaurantsMenu';
 import { createBrowserRouter, RouterProvider, Outlet } from 'react-router-dom';
 // import Grocery from './components/Grocery';
+import { ThemeProvider } from '../src/utils/ThemeContext';
 
 const Grocery = lazy(() => import('./components/Grocery.js'));
 
 const AppLayout = () => {
     return(
-        <div className="app">
-            <Header/>
-            <Outlet/>
-            <Footer/>
-        </div>
+        <ThemeProvider>
+            <div className="app">
+                <Header/>
+                <Outlet/>
+                <Footer/>
+            </div>
+        </ThemeProvider>
     );
 };
 
