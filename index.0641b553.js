@@ -43900,7 +43900,7 @@ const BodyContainer = ()=>{
                                         /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("button", {
                                             className: `text-sm rounded-full border border-stone-300 border-solid px-3 py-1 hover:text-stone-50 hover:bg-rose-400 hover:border-rose-400 transition-all mr-1 capitalize ${activeFilter === "fourplus" ? "bg-rose-600 text-stone-50" : ""}`,
                                             onClick: ()=>handleFilter("fourplus"),
-                                            children: "rating 4.0+"
+                                            children: "rating 4.5+"
                                         }, void 0, false, {
                                             fileName: "src/components/BodyContainer.js",
                                             lineNumber: 138,
