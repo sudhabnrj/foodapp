@@ -27322,11 +27322,11 @@ const Header = ()=>{
         className: `dark:bg-slate-800 light:bg-slate-50 shadow-md lg:min-h-24 pb-3 lg:pb-0 ${mobileNavMenu === true ? "opened" : ""}`,
         children: [
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-                className: " bg-slate-700",
+                className: " bg-rose-400 dark:bg-slate-700",
                 children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
                     className: "container flex justify-center items-center",
                     children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
-                        className: "text-sm text-slate-400",
+                        className: "text-sm text-stone-200 dark:text-slate-400",
                         children: "The restaurants data is coming from @Swigy live API, for testing purpose"
                     }, void 0, false, {
                         fileName: "src/components/Header.js",
@@ -43854,8 +43854,19 @@ const BodyContainer = ()=>{
     };
     //Online/Offline Check
     if (isOnline === false) return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h1", {
-        children: "Opps, Looks like you are offline!"
-    }, void 0, false, {
+        className: "text-center mt-5 font-medium",
+        children: [
+            "Opps, Looks like you are ",
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("span", {
+                className: "font-bold",
+                children: "offline!"
+            }, void 0, false, {
+                fileName: "src/components/BodyContainer.js",
+                lineNumber: 116,
+                columnNumber: 86
+            }, undefined)
+        ]
+    }, void 0, true, {
         fileName: "src/components/BodyContainer.js",
         lineNumber: 116,
         columnNumber: 16
@@ -44770,7 +44781,7 @@ const User = ({ name, location, avatar_url, bio, company, email, public_repos, h
                         columnNumber: 17
                     }, undefined),
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
-                        className: "text-slate-200",
+                        className: "text-stone-600 dark:text-slate-200",
                         children: bio
                     }, void 0, false, {
                         fileName: "src/components/User.js",
@@ -44787,7 +44798,7 @@ const User = ({ name, location, avatar_url, bio, company, email, public_repos, h
                                 columnNumber: 20
                             }, undefined),
                             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("span", {
-                                className: "text-slate-400",
+                                className: "text-stone-600 dark:text-slate-400",
                                 children: company
                             }, void 0, false, {
                                 fileName: "src/components/User.js",
@@ -44810,7 +44821,7 @@ const User = ({ name, location, avatar_url, bio, company, email, public_repos, h
                                 columnNumber: 20
                             }, undefined),
                             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("span", {
-                                className: "text-slate-400",
+                                className: "text-stone-600 dark:text-slate-400",
                                 children: location
                             }, void 0, false, {
                                 fileName: "src/components/User.js",
@@ -44833,7 +44844,7 @@ const User = ({ name, location, avatar_url, bio, company, email, public_repos, h
                                 columnNumber: 20
                             }, undefined),
                             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("span", {
-                                className: "text-slate-400",
+                                className: "text-stone-600 dark:text-slate-400",
                                 children: email
                             }, void 0, false, {
                                 fileName: "src/components/User.js",
@@ -44856,7 +44867,7 @@ const User = ({ name, location, avatar_url, bio, company, email, public_repos, h
                                 columnNumber: 20
                             }, undefined),
                             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("span", {
-                                className: "text-slate-400",
+                                className: "text-stone-600 dark:text-slate-400",
                                 children: public_repos
                             }, void 0, false, {
                                 fileName: "src/components/User.js",
