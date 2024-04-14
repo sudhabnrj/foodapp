@@ -615,8 +615,15 @@ var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 var _jsxDevRuntime = require("react/jsx-dev-runtime");
 const Grocery = ()=>{
-    return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h1", {
-        children: "This is Grocery Page with defferent bundle from Restuarants Site"
+    return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+        className: "container mx-auto mt-12",
+        children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h1", {
+            children: "This is Grocery Page with defferent bundle from Restuarants Site"
+        }, void 0, false, {
+            fileName: "src/components/Grocery.js",
+            lineNumber: 4,
+            columnNumber: 13
+        }, undefined)
     }, void 0, false, {
         fileName: "src/components/Grocery.js",
         lineNumber: 3,
