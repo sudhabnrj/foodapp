@@ -4,20 +4,10 @@ export const CDN_URL = "https://media-assets.swiggy.com/swiggy/image/upload/fl_l
 
 export const SINGLE_IMAGE = "https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_208,h_208,c_fit/";
 
-// export const VEG = "/src/images/veg.png";
-// export const NON_VEG = "/src/images/non-veg.png";
-//export const ONLINE = "/src/images/online.png";
-//export const OFFLINE = "/src/images/offline.png";
+//this is live api
+export const REST_CARD_API= 'https://foodapp-server-6ndv.onrender.com/api/restaurants?lat=22.572646&lng=88.36389500000001&page_type=DESKTOP_WEB_LISTING';
 
-
-// this is local API 
-// export const REST_CARD_API= 'https://www.swiggy.com/dapi/restaurants/list/v5?lat=22.57667528302465&lng=88.43104854241207&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING';
+// export const REST_CARD_API= 'https://www.swiggy.com/dapi/restaurants/list/v5?lat=22.572646&lng=88.36389500000001&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING';
 
 //this is live api
-export const REST_CARD_API= 'https://foodapp-server-6ndv.onrender.com/api/restaurants?lat=21.1702401&lng=72.83106070000001&page_type=DESKTOP_WEB_LISTING';
-
-// this is local API 
-// export const MENU_API= 'https://www.swiggy.com/dapi/menu/pl?page-type=REGULAR_MENU&complete-menu=true&lat=22.57667528302465&lng=88.43104854241207&restaurantId=';
-
-//this is live api
-export const MENU_API= 'https://foodapp-server-6ndv.onrender.com/api/menu?page-type=REGULAR_MENU&complete-menu=true&lat=21.1702401&lng=72.83106070000001&&submitAction=ENTER&restaurantId=';
+export const MENU_API= 'https://foodapp-server-6ndv.onrender.com/api/menu?page-type=REGULAR_MENU&complete-menu=true&lat=22.572646&lng=88.36389500000001&&submitAction=ENTER&restaurantId=';

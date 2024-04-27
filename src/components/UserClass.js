@@ -10,19 +10,19 @@ class UserClass extends React.Component{
                 avatar_url: ''
             }
         }
-        console.log('Child constructure is called!');
+        //console.log('Child constructure is called!');
     }
     async componentDidMount(){
         //console.log('Child ComponentDidMount is called!');
 
         const data = await fetch('https://api.github.com/users/sudhabanerjeecc');
         const json = await data.json();
-        console.log(json);
+        //console.log(json);
         this.setState({
             userList: json
             
         })
-        console.log(json);
+        //console.log(json);
     }
     render(){
         const {name, avatar_url, location} = this.state.userList;

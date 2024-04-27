@@ -7,10 +7,13 @@ import useRestaurantMenu from '../utils/useRestaurantMenu';
 import vegImg from '../images/veg.png';
 import nonVegImg from '../images/non-veg.png';
 import RestaurantsCategory from './RestaurantsCategory';
+import { useState } from 'react';
 
 
 
 const RestaurantsMenu = () => {
+
+    const [showIndex, setShowIndex] = useState(null);
 
     const { resId } = useParams();
 
@@ -85,8 +88,11 @@ const RestaurantsMenu = () => {
                     </div>
 
                     <div className="restaurants-menu-list">
-                        {itemsCategory.map((category)=> (
-                            <RestaurantsCategory key={category?.card?.card.title} data={category?.card?.card}/>
+                        {itemsCategory.map((category, index)=> (
+                            <RestaurantsCategory key={category?.card?.card.title} data={category?.card?.card} 
+                            showItems={index === showIndex ? true : false}
+                            setShowIndex = {()=> setShowIndex(index)}
+                            />
                         ))}
                     </div>
                 </div>

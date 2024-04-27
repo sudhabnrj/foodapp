@@ -1,17 +1,27 @@
 import { LOGO_URL, ONLINE, OFFLINE } from '../utils/constents';
-import { useState } from 'react';
+import { useState, useContext } from 'react';
 import {Link} from 'react-router-dom';
 import useOnlineStatus from '../utils/useOnlineStatus';
 import Avatar from '../images/avatar.png';
 import LightModeIcon from '@mui/icons-material/LightMode';
 import DarkModeIcon from '@mui/icons-material/DarkMode';
 import {useTheme} from '../utils/ThemeContext';
+// import UserContext from '../utils/UserContext';
+import { useSelector } from 'react-redux';
+import ShoppingCartOutlinedIcon from '@mui/icons-material/ShoppingCartOutlined';
+
 
 const Header = () =>{
+
+    const cartItem = useSelector((store)=> store.cart.item);
+    //console.log(cartItem);
 
     const [accButton, setAccountButton] = useState('Login');
     const { isDarkMode, toggleMode } = useTheme();
     const [mobileNavMenu, setMobileNavMenu] = useState(false);
+
+    // const {contextUser} = useContext(UserContext);
+    // console.log(contextUser);   
 
     const  isOnline = useOnlineStatus();
 
@@ -25,9 +35,9 @@ const Header = () =>{
 
     return(
         <header className={`dark:bg-slate-800 light:bg-slate-50 shadow-md lg:min-h-24 pb-3 lg:pb-0 ${mobileNavMenu === true ? 'opened' : ''}`}>
-            <div className=' bg-rose-400 dark:bg-slate-700'>
-                <div className='container flex justify-center items-center'>
-                    <p className='text-sm text-stone-200 dark:text-slate-400'>The restaurants data is coming from @Swigy live API, for testing purpose</p>
+            <div className=' bg-rose-400 dark:bg-slate-700 px-4 lg:px-0'>
+                <div className='container mx-auto flex justify-center items-center'>
+                    <p className='text-sm text-stone-200 dark:text-slate-400 py-1'>The restaurants data is coming from @Swigy live API, for testing purpose</p>
                 </div>
             </div>
             <div className="container mx-auto px-4 md:px-0">
@@ -43,7 +53,12 @@ const Header = () =>{
                                     <li><Link to="/about">About Us</Link></li>
                                     <li><Link to="/contact">Contact Us</Link></li>
                                     <li><Link to="/grocery">Grocery</Link></li>
-                                    <li>Cart</li>
+                                    <li>
+                                        <Link to='/cart'>
+                                            <ShoppingCartOutlinedIcon />
+                                            <span>({cartItem.length})</span>
+                                        </Link>
+                                    </li>
                                     <li>
                                         <div className="">
                                             <button type="button" className="w-full text-base bg-red-400 text-stone-50 px-5 py-2 flex items-center justify-center rounded-md" onClick={()=> {accountHandler()}}>{accButton}</button>
@@ -56,12 +71,18 @@ const Header = () =>{
                                 <li><Link to="/about">About Us</Link></li>
                                 <li><Link to="/contact">Contact Us</Link></li>
                                 <li><Link to="/grocery">Grocery</Link></li>
-                                <li>Cart</li>
+                                <li>
+                                    <Link to='/cart'>
+                                        <ShoppingCartOutlinedIcon />
+                                        <span>({cartItem.length})</span>
+                                    </Link>
+                                </li>
                                 <li>
                                     <div className="mx-5">
                                         <button type="button" className="text-base bg-red-400 text-stone-50 px-5 py-2 flex items-center justify-center rounded-md" onClick={()=> {accountHandler()}}>{accButton}</button>
                                     </div>
-                                </li>                      
+                                </li>
+                                {/* <li className="mr-2">User Name: {contextUser}</li>                    */}
                             </ul>
                             <div className="flex justify-end lg:justify-end items-center mt-2 lg:mt-0">
                                 <div className="">

@@ -32,14 +32,14 @@
 }
 .humberger-menu {
     padding: 0;
-    width: 2.5rem;
+    width: 2rem;
     height: 2rem;
     top: 8px;
 }
 span.line-icon {
     display: block;
     position: absolute;
-    width: 2.5rem;
+    width: 2rem;
     opacity: 1;
     left: 50%;
     -webkit-transform: translateX(-50%) rotate(0deg);

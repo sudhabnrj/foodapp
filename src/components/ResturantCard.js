@@ -1,11 +1,18 @@
 import { CDN_URL, SINGLE_IMAGE } from '../utils/constents';
 import StarsIcon from '@mui/icons-material/Stars';
+import { useContext } from 'react';
+
+// import UserContext from '../utils/UserContext';
 
 const ResturantCard = (props) =>{ 
 
     const { resData } = props;
 
     const {cloudinaryImageId, name, avgRating, cuisines, costForTwo, sla} = resData.info;
+
+    // const {contextUser} = useContext(UserContext);
+
+    //console.log(contextUser);
 
     return(
         <div className="w-full flex flex-col bg-stone-50 dark:bg-slate-800 hover:bg-stone-100 h-full rounded-md drop-shadow hover:drop-shadow-xl transition-all">
@@ -24,6 +31,7 @@ const ResturantCard = (props) =>{
                 <div className="flex flex-wrap text-wrap mt-4">
                     <div className="cuisine">{cuisines.join(', ')}</div>                    
                 </div>
+                {/* <p>User Name: {contextUser}</p> */}
             </div>
         </div>
     );

@@ -1,5 +1,5 @@
 import ResturantCard, {discountTag} from './ResturantCard.js';
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useContext } from 'react';
 import Shimmer from '../components/Shimmer.js';
 import { Link } from 'react-router-dom';
 import { REST_CARD_API } from '../utils/constents.js';
@@ -7,15 +7,24 @@ import Search from './Search.js';
 import useOnlineStatus from '../utils/useOnlineStatus';
 import useRestaurantList from '../utils/useRestaurantList';
 import CloseIcon from '@mui/icons-material/Close';
+import Banner from './Banner';
+// import UserContext from '../utils/UserContext';
+import CategoryCarousel from './CategoryCarousel';
+import Slider from "react-slick";
+import NextArrow from './NextArrow';
+import PrevArrow from './PrevArrow';
 
 
-const BodyContainer = () => {
+const BodyContainer = ({src, name}) => {
 
     const [searchText, setSearchText] = useState('');
     const [resturantList, setResturantList] = useState([]);
     const [filteredResturant, setFilteredResturant] = useState([]);
     const [restaurantTitle, setRestaurantTitle] = useState('');
     const [activeFilter, SetActiveFilter] = useState(null);
+    const [catCarousel, setCatCarousel] = useState([]);
+
+    // const { setUserName, contextUser } = useContext(UserContext);
     
 
    const isOnline = useOnlineStatus();
@@ -34,35 +43,14 @@ const BodyContainer = () => {
             const json = await data.json();
     
             const cards = json?.data?.cards;
-    
-            let restaurantCard = null;
-    
-            // Identify the index of the card containing restaurant data dynamically
-            if (Array.isArray(cards)) {
-                const desktopIndex = cards.findIndex(card => card?.card?.card?.gridElements?.infoWithStyle?.restaurants && card.card.card.gridElements.infoWithStyle.restaurants.length > 0);
 
-                //console.log(resturantList);
-
-                const mobileIndex = cards.findIndex(card => card?.card?.card?.gridElements?.infoWithStyle?.restaurants && card.card.card.gridElements.infoWithStyle.restaurants.length > 0);
-                //console.log(mobileIndex);
+            console.log(cards[4]?.card?.card?.gridElements?.infoWithStyle?.restaurants);
     
-                // Check if either desktop or mobile index is found
-                if (desktopIndex !== -1) {
-                    restaurantCard = cards[mobileIndex];
-                } else if (mobileIndex !== -1) {
-                    restaurantCard = cards[desktopIndex];
-                }
-            }
-    
-            if (!restaurantCard) {
-                console.error("No restaurant card found in response");
-                return;
-            }
-    
-            setResturantList(restaurantCard.card.card.gridElements.infoWithStyle.restaurants);
-            setFilteredResturant(restaurantCard.card.card.gridElements.infoWithStyle.restaurants);
-            setRestaurantTitle(restaurantCard.card?.card?.title);
-            //console.log("Restaurant:", restaurantCard.card);
+            setResturantList(cards[4]?.card?.card?.gridElements?.infoWithStyle?.restaurants);
+            setFilteredResturant(cards[4]?.card?.card?.gridElements?.infoWithStyle?.restaurants);
+            setRestaurantTitle(cards[2]?.card?.card?.title);
+            setCatCarousel(cards[0]?.card?.card?.gridElements?.infoWithStyle?.info);
+            //console.log(cards[0]?.card?.card?.gridElements?.infoWithStyle?.info);
         } catch (error) {
             console.error("Error fetching data:", error);
         }
@@ -76,11 +64,15 @@ const BodyContainer = () => {
         if (filter === 'fourplus'){
             const avgRating = filteredResturant.filter((res)=> res?.info?.avgRating > 4.5);
             setFilteredResturant(avgRating);
-            console.log(avgRating);
+            //console.log(avgRating);
         }else if(filter === 'price'){
             const priceFilterResult = filteredResturant.filter((res)=> parseFloat(res?.info?.costForTwo.replace('₹', '')) < 300);
             setFilteredResturant(priceFilterResult);
-            console.log(priceFilterResult);
+            //console.log(priceFilterResult);
+        }else if(filter === 'veg'){
+            const vegFilterResult = filteredResturant.filter((res) => res.info.veg === true );
+            setFilteredResturant(vegFilterResult);
+            console.log(vegFilterResult);
         }
         
     };
@@ -99,7 +91,7 @@ const BodyContainer = () => {
             setFilteredResturant(resturantList);
         }else if (inputValue.length >= 3){
             const filteredResult = resturantList.filter((res) => res?.info?.name?.toLowerCase().includes(inputValue.toLowerCase()));
-            console.log(filteredResult);
+            //console.log(filteredResult);
             setFilteredResturant(filteredResult);
         }
     };
@@ -108,7 +100,7 @@ const BodyContainer = () => {
     const clearSearch = () => {
         setSearchText('');
         setFilteredResturant(resturantList);
-        console.log('clicked');
+        //console.log('clicked');
     };
 
     //Online/Offline Check
@@ -123,8 +115,63 @@ const BodyContainer = () => {
         );
     };
 
+    //Carousel category
+    var settings = {
+        dots: false,
+        infinite: true,
+        autoplay: true,
+        speed: 500,
+        slidesToShow: 8,
+        slidesToScroll: 1,
+        nextArrow: <NextArrow/>,
+        prevArrow: <PrevArrow/>,
+        initialSlide: 0,
+        responsive: [
+        {
+            breakpoint: 1600,
+            settings: {
+                slidesToShow: 8,
+                slidesToScroll: 1,
+            }
+        },
+        {
+            breakpoint: 600,
+            settings: {
+                slidesToShow: 3,
+                slidesToScroll: 1,
+                initialSlide: 1
+            }
+        },
+        {
+            breakpoint: 380,
+            settings: {
+                slidesToShow: 2,
+                slidesToScroll: 1
+            }
+        }
+        ]
+    };
+
+
     return(
-        <div className="body-container mt-8">
+        <div className="body-container">
+            <Banner/>
+            {/* What's on your mind? */}
+            <div className="my-10">
+                <div className="container mx-auto px-4 lg:px-0">
+                    <div className="relative">
+                        <h1 className="mt-12 mb-6 text-2xl font-bold">What's on your mind?</h1>
+                        <div className="slider-container">
+                            <Slider {...settings}>
+                                {catCarousel.map((item)=> {
+                                    //console.log(item.action.text);
+                                    return <CategoryCarousel key={item.id} src={item.imageId} name={item.action.text} />
+                                })}
+                            </Slider>                      
+                        </div>
+                    </div>
+                </div>
+            </div>
             <div className="container mx-auto px-4 lg:px-0">
                 <div className="flex flex-col lg:flex-row justify-between items-center">
                     <div className="w-full lg:w-3/4 flex flex-col lg:flex-row justify-start items-center ">
@@ -135,13 +182,13 @@ const BodyContainer = () => {
                             {/* <button className="text-sm rounded-full border border-stone-300 border-solid px-3 py-1 hover:text-stone-50 hover:bg-rose-400 hover:border-rose-400 transition-all mr-1 capitalize" type="button" onClick={()=> handleFilter()}>
                                 Top Resturants
                             </button> */}
-                            <button className={`text-sm rounded-full border border-stone-300 border-solid px-3 py-1 hover:text-stone-50 hover:bg-rose-400 hover:border-rose-400 transition-all mr-1 capitalize ${activeFilter === 'fourplus' ? 'bg-rose-600 text-stone-50' : ''}`} onClick={() => handleFilter('fourplus')}>
+                            <button className={`text-sm rounded-full border border-stone-300 dark:border-slate-700 border-solid px-3 py-1 hover:text-stone-50 hover:bg-rose-400 hover:border-rose-400 transition-all mr-1 capitalize ${activeFilter === 'fourplus' ? 'bg-rose-600 text-stone-50' : ''}`} onClick={() => handleFilter('fourplus')}>
                                     rating 4.5+
                             </button>
-                            {/* <button className="text-sm rounded-full border border-stone-300 border-solid px-3 py-1 hover:text-stone-50 hover:bg-rose-400 hover:border-rose-400 transition-all mr-1 capitalize">
+                            <button className={`text-sm rounded-full border border-stone-300 dark:border-slate-700 border-solid px-3 py-1 hover:text-stone-50 hover:bg-rose-400 hover:border-rose-400 transition-all mr-1 capitalize ${activeFilter === 'veg' ? 'bg-rose-600 text-stone-50' : ''}`} onClick={() => handleFilter('veg')}>
                                     Pure veg 
-                            </button> */}
-                            <button className={`text-sm rounded-full border border-stone-300 border-solid px-3 py-1 hover:text-stone-50 hover:bg-rose-400 hover:border-rose-400 transition-all mr-1 capitalize ${activeFilter === 'price' ? 'bg-rose-600 text-stone-50' : ''}`} onClick={()=> handleFilter('price')}>
+                            </button>
+                            <button className={`text-sm rounded-full border border-stone-300 dark:border-slate-700 border-solid px-3 py-1 hover:text-stone-50 hover:bg-rose-400 hover:border-rose-400 transition-all mr-1 capitalize ${activeFilter === 'price' ? 'bg-rose-600 text-stone-50' : ''}`} onClick={()=> handleFilter('price')}>
                                     Less than Rs.300
                             </button>                            
                             {activeFilter ? (
@@ -156,6 +203,10 @@ const BodyContainer = () => {
                             </div>
                         ) : ''}
                     </div>
+                    {/* <div className="flex items-center">
+                        <label>User:</label>
+                        <input type="text" value={contextUser} onChange={(e)=> setUserName(e.target.value)} className="p-4 text-black" />
+                    </div> */}
                 </div>
 
                 <div>
