@@ -1,24 +1,24 @@
 # Shopee Food App - A Food ordering (Swigy clone) with React, Redux, Tailwind and Parcel
 To view the application, click here → 🔥[Shopee Food](https://shopeefood.netlify.app/ "Shopee Food")🔥
 ## 💻 Functional: 
- -create- react-app
- -configure tailwind
- -Browser Router
-  -- Confiure routing and provide it to our app
+- create react-app
+- configure tailwind
+- Browser Router
+-  -- Confiure routing and provide it to our app
 - Header
 - Restaurants page
- -- Slick Carousel Integration
- -- Search Bar
- -- Filter by "Rating" , "Veg", "Price"
- -- List of Restaurants
+- -- Slick Carousel Integration
+- -- Search Bar
+- -- Filter by "Rating" , "Veg", "Price"
+- -- List of Restaurants
 - Restaurants Page
 - Cart Page
 - About Page (Data Source "Github user API")
 - Contact Us Page
 - Online Offline Mode 
---set up redux
- -- create slice
- -- fetched data from swigy Live API and Github user API
+- set up redux
+- -- create slice
+- -- fetched data from swigy Live API and Github user API
 - Making my app responsive
 
 ## 👨🏻‍💻Tech choices
@@ -37,7 +37,7 @@ To view the application, click here → 🔥[Shopee Food](https://shopeefood.net
 - Selector
 
 <br/>
-## 🔥 Clone this Repository
+🔥 Clone this Repository
 
 You need to write the following commands on the terminal screen(in vscode) so that you can run this project locally.
 
